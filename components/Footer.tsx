@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
           {/* Copyright */}
           <div className="mb-4 md:mb-0">
             <p className="text-gray-600 text-sm">
-              © {currentYear} Wesley Meredith. All rights reserved.
+              © {currentYear} Leo Beck. All rights reserved.
             </p>
           </div>
 

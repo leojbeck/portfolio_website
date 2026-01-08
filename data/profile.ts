@@ -23,18 +23,18 @@ export interface Profile {
 }
 
 export const profile: Profile = {
-  name: "Wesley Meredith",
-  title: "Data Scientist",
+  name: "Leo Beck",
+  title: "Computational Materials Scientist",
   currentRole: {
-    company: "Snappi Sites",
-    position: "Freelance Engineer",
+    company: "Heinz Interfaces Lab",
+    position: "Graduate Researcher",
     badge: undefined // Optional: remove if not applicable
   },
   description: [
-    "I graduated from North Carolina State University with a Master's in Computer Science.",
-    "I worked at Michelin as a Data Scientist Summer of 2024, primarily on market forecasting and creating AI-driven applications internally.",
-    "I enjoy music, cooking, soccer, and binge watching geography and construction videos on YouTube."
+    "I am a Materials Science & Engineering PhD student at CU Boulder. My research is focused on using molecular dynamics to predict stability and structures of hybrid organic inorganic perovskites (HOIPs)",
+    "I worked at the Air Force Research Lab (AFRL) as a High Performance Computing researcher Summer of 2024, focused on calculating shear properties of MXenes using molecular dynamics.",
+    "I enjoy music, hiking, climbing, and geography games."
   ],
-  // avatar: "/images/avatar.jpg" // Uncomment and add your avatar image
+  avatar: "/images/Beck-Leo_8x10_20240718.jpg" // Uncomment and add your avatar image
 };
 

@@ -7,7 +7,7 @@
  * 
  * Structure:
  * 1. Hero Section - Introduction and personal info
- * 2. Projects Section - Showcase of data science projects
+ * 2. Projects Section - Showcase of projects
  * 3. Contact Section - Contact information and social links
  * 
  * To customize:
@@ -26,8 +26,8 @@ import Contact from '../components/Contact';
 const HomePage: React.FC = () => {
   return (
     <Layout
-      title="Wesley Meredith"
-      description="Professional portfolio showcasing data science projects, machine learning expertise, and technical skills"
+      title="Leo Beck"
+      description="Professional portfolio showcasing research projects, materials science expertise, and technical skills"
     >
       {/* Hero Section - Introduction and personal info */}
       <Hero />

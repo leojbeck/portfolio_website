@@ -7,11 +7,11 @@ import { profile } from '../../data/profile';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 // Import your project content components
-import StockNewsContent from './StockNewsContent';
-import HousingPriceContent from './HousingPriceContent';
-import SpotifyWrappedContent from './SpotifyWrappedContent';
-import DrowsinessDetectorContent from './DrowsinessDetectorContent';
-import VailContent from './VailContent';
+import ClemsonMemristorContent from './ClemsonMemristorContent';
+import HOIP_mlContent from './HOIP_mlContent';
+import MxeneDopamineContent from './MxeneDopamineContent';
+import MxeneRoadmapContent from './MxeneRoadmapContent';
+import HOIP_mdContent from './HOIP_mdContent';
 
 const ProjectPage: React.FC = () => {
   const router = useRouter();
@@ -46,16 +46,16 @@ const ProjectPage: React.FC = () => {
  // Function to render project-specific content component
  const renderProjectContent = () => {
   switch (project.id) {
-    case 'vail-causal':
-      return <VailContent project={project} />;
-    case 'stock-news-sentiment-analysis':
-      return <StockNewsContent project={project} />;
-    case 'housing-price-prediction':
-      return <HousingPriceContent project={project} />;
-    case 'spotify-wrapped-clone':
-      return <SpotifyWrappedContent project={project} />;
-    case 'drowsiness-detector':
-      return <DrowsinessDetectorContent project={project} />;  
+    case 'hoip-md':
+      return <HOIP_mdContent project={project} />;
+    case 'clemson-memristor':
+      return <ClemsonMemristorContent project={project} />;
+    case 'hoip-ml':
+      return <HOIP_mlContent project={project} />;
+    case 'mxene-dopamine':
+      return <MxeneDopamineContent project={project} />;
+    case 'mxene-roadmap':
+      return <MxeneRoadmapContent project={project} />;  
     default:
       // fallback: show default introduction
       return (
@@ -108,11 +108,11 @@ return (
 // ADD THESE FUNCTIONS FOR STATIC GENERATION:
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = [
-    { params: { id: 'vail-causal' } },
-    { params: { id: 'stock-news-sentiment-analysis' } },
-    { params: { id: 'housing-price-prediction' } },
-    { params: { id: 'spotify-wrapped-clone' } },
-    { params: { id: 'drowsiness-detector' } },
+    { params: { id: 'hoip-md' } },
+    { params: { id: 'clemson-memristor' } },
+    { params: { id: 'hoip-ml' } },
+    { params: { id: 'mxene-dopamine' } },
+    { params: { id: 'mxene-roadmap' } },
   ];
 
   return {

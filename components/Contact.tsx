@@ -124,10 +124,10 @@ const Contact: React.FC = () => {
                 <span className="text-gray-700 font-medium">GitHub</span>
               </a>
 
-              {/* Kaggle - Optional */}
-              {contactInfo.kaggle && (
+              {/* ORCiD - Optional */}
+              {contactInfo.orcid && (
                 <a
-                  href={contactInfo.kaggle}
+                  href={contactInfo.orcid}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"
@@ -135,7 +135,22 @@ const Contact: React.FC = () => {
                   <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
                     <Database size={16} className="text-orange-600" />
                   </div>
-                  <span className="text-gray-700 font-medium">Kaggle</span>
+                  <span className="text-gray-700 font-medium">ORCiD</span>
+                </a>
+              )}
+
+              {/* ResearchGate - Optional */}
+              {contactInfo.researchgate && (
+                <a
+                  href={contactInfo.researchgate}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+                >
+                  <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                    <Database size={16} className="text-orange-600" />
+                  </div>
+                  <span className="text-gray-700 font-medium">ResearchGate</span>
                 </a>
               )}
 
@@ -160,10 +175,10 @@ const Contact: React.FC = () => {
         {/* Call to Action */}
         <div className="text-left">
           <p className="text-gray-600 mb-4">
-            Looking for a data scientist to join your team?
+            Looking for a materials scientist to join or collaborate with your team?
           </p>
           <a
-            href={`mailto:${contactInfo.email}?subject=Data Science Opportunity`}
+            href={`mailto:${contactInfo.email}?subject=Materials Science Collaboration Opportunity`}
             className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200"
           >
             <Mail size={20} className="mr-2" />

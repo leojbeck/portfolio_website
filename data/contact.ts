@@ -19,16 +19,19 @@ export interface ContactInfo {
   github: string;
   kaggle?: string; // Optional: remove if you don't have Kaggle
   portfolio?: string; // Optional: remove if you don't have a separate portfolio
+  orcid?: string;
+  researchgate?: string;
 }
 
 export const contactInfo: ContactInfo = {
-  email: "wmeredith777@gmail.com",
-  phone: "704-619-2058",
-  location: "Raleigh, NC",
-  linkedin: "https://linkedin.com/in/wesleymeredith",
-  github: "https://github.com/wesleymeredith",
-  // kaggle: "https://kaggle.com/wesleymeredith", // Uncomment if you have Kaggle
+  email: "leojbeck@gmail.com",
+  phone: "704-654-8644",
+  location: "Boulder, CO",
+  linkedin: "https://www.linkedin.com/in/leo-beck",
+  github: "https://github.com/leojbeck",
+  orcid: "https://orcid.org/0009-0000-9568-9733", // Uncomment if you have Kaggle
   // portfolio: "https://wesleymeredith.github.io" // Uncomment if you have a separate portfolio
+  researchgate: "https://www.researchgate.net/profile/Leo-Beck-3"
 };
 
 // Social media icons mapping (these will be used to display appropriate icons)
@@ -36,5 +39,7 @@ export const socialIcons = {
   linkedin: "Linkedin",
   github: "Github",
   kaggle: "Database", // Using Database icon for Kaggle
-  portfolio: "Globe"
+  portfolio: "Globe",
+  orcid: "ORCiD",
+  researchgate: "ResearchGate"
 };

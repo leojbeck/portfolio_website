@@ -1,6 +1,6 @@
 # My Portfolio
 
-This is my portfolio website built with **Next.js**, **React**, and **Tailwind CSS** to showcase my data science projects.
+This is my portfolio website built with **Next.js**, **React**, and **Tailwind CSS** to showcase my materials science projects.
 
 ## Structure
 - `data/` – personal details, projects, and contact info  

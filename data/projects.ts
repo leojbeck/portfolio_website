@@ -26,65 +26,70 @@ export interface Project {
   demo?: string; // Optional: Live demo URL to Loom
   notebook?: string; // Optional: Jupyter notebook or analysis link
   date: string; // Date when the project was completed
+  paper?: string; // Optional: URL to publication
 }
 
 export const projects: Project[] = [
   {
-    id: "vail-causal",
-    title: "Analyzing Vail's Ski Resort Acquisitions with Causal Inference",
-    description: "Applied difference-in-differences to assess socioeconmic impacts of Vail's expansion across North America.",
-    longDescription: "Here I collected and processed data for 7-vail acquired and 35 control ski towns via Census API, and used propensity score matching on demongraphies.",
-    techStack: ["Python", "Causal Inference"],
-    images: ["/images/projects/ski-pic.png"],
-    notebook: "/notebooks/vail_causal",
-    date: "2025"
+    id: "hoip-md",
+    title: "Predicting Stability and Structure of Hybrid Organic Inorganic Perovskites",
+    description: "Using Molecular Dynamics to calculate formation energies and structural features.",
+    longDescription: "I am using LAMMPS to calculate formation energies and structural features of HOIPs / HMHs, with the goal to give predictions to experimental collaborators.",
+    techStack: ["LAMMPS","Python", "HPC", "bash", "Machine Learning"],
+    images: ["/images/projects/FMBA_esm.png"],
+    github: "https://github.com/leojbeck/lammps_pre_post_processing",
+    //notebook: "/notebooks/vail_causal",
+    date: "2026"
   },
   {
-    id: "stock-news-sentiment-analysis",
-    title: "Stock News Sentiment Analysis Tool",
-    description: "Developed an NLP-powered Flask web application utilizing BERT, PyTorch, and NLTK to analyze sentiment in financial news articles",
-    longDescription: "This project involved building a comprehensive sentiment analysis tool specifically designed for financial news. The application integrates with the News.org API to retrieve relevant stock-related articles and performs sentiment analysis using BERT (Bidirectional Encoder Representations from Transformers) and PyTorch. The system generates structured insights for users, helping them assess market trends and make data-driven investment decisions. The project demonstrates proficiency in natural language processing for sentiment analysis and showcases the ability to build practical web applications that solve real-world problems.",
-    techStack: ["Python", "Flask", "BERT", "PyTorch", "NLTK", "Natural Language Processing"],
-    images: ["/images/projects/sentiment-analysis.png", "/images/projects/senti1.png", "/images/projects/senti2.png"],
-    github: "https://github.com/wesleymeredith/Financial-News-Sentiment-Analysis",
-    demo: "https://financial-news-sentiment-analysis.vercel.app/",
+    id: "clemson-memristor",
+    title: "Fabrication of Polypyrrole Electrochemical Memristors",
+    description: "Fabricated 3-terminal thin-film organic memristors, then performed electrical characterization.",
+    longDescription: "This project involved fabricating 3-terminal organic memristors with various chemistries, then using an oscilloscope to characterize their memristive properties. The work was part of a larger research project, which has been published in ACS Applied Electronic Materials.",
+    techStack: ["Photolithography", "Chemical Etching", "Device Fabrication"],
+    images: ["/images/projects/memristor_fig2.jpeg", "/images/projects/memristor_fig5.jpeg"],
+    //github: "<>",
+    paper: "https://par.nsf.gov/servlets/purl/10474242",
     //notebook: "/notebooks/letusski.html",
+    date: "2021"
+  },
+  {
+    id: "hoip-ml",
+    title: "Enhancing Dimensionality Prediction in Hybrid Metal Halides",
+    description: "Used the HybriD3 database to build machine learning models to predict hybrid metal halide dimensionality.",
+    longDescription: "This project involved programmatically grabbing entries from HybriD3, filtering, and applying machine learning methods to the small-scale, imbalanced database.",
+    techStack: ["Python", "Feature Extraction","XGBoost", "Machine Learning"],
+    images: ["/images/projects/hoip-mariia-ml-hybrid3.png"],
+    //github: "<>",
+    //demo: "<>"
+    //notebook: "<>",
+    paper: "https://arxiv.org/abs/2512.05367",
     date: "2025"
   },
   {
-    id: "housing-price-prediction",
-    title: "Housing Price Prediction Challenge",
-    description: "Secured a top 12% ranking on Kaggle's housing price prediction challenge by applying machine learning algorithms, feature engineering, and hyperparameter tuning techniques.",
-    longDescription: "This project involved comprehensive exploratory data analysis (EDA) of the Ames Housing dataset to gain insights into key patterns and trends. I implemented and optimized multiple machine learning algorithms including decision trees, random forests, XGBoost, and artificial neural networks (ANNs). Through feature engineering and hyperparameter tuning using scikit-learn grid search, I enhanced prediction accuracy by 15%. The project secured a top 12% ranking among 24,000 participants on Kaggle, demonstrating strong machine learning fundamentals and competitive data science skills.",
-    techStack: ["Python", "Neural Networks","XGBoost", "Machine Learning"],
-    images: ["/images/projects/StockNewsCover.png"],
-    github: "https://github.com/wesleymeredith/Ames-Housing-Project",
-    //demo: "<>"
-    //notebook: "https://www.kaggle.com/wesleymeredith/housing-price-prediction",
-    date: "2023"
+    id: "mxene-dopamine",
+    title: "Quantifying MXene Interfacial Properties",
+    description: "Used NAMD to simulate dopamine binding on the surface of Ti3C2 MXenes under various surface conditions.",
+    longDescription: "As part of a larger project, I used NAMD to run single dopamine and multiple dopamine accumulation simulations under pH 5 and 6, with varying amounts of -OH and -F surface terminations.",
+    techStack: ["Python", "MXenes", "NAMD", "bash", "LAMMPS"],
+    images: ["/images/projects/40_f23_ruler_yes_depth.png","/images/projects/landing_page_1.png","/images/projects/second_page_2.png","/images/projects/third_page_3.png"],
+    //demo: "<>",
+    github: "https://github.com/leojbeck/namd_pre_post_processing",
+    paper: "https://chemrxiv.org/engage/chemrxiv/article-details/6921f2b8a10c9f5ca13a9ea6",
+    //notebook: "<>"
+    date: "2025"
   },
   {
-    id: "spotify-wrapped-clone",
-    title: "Spotify 'Wrapped' Clone",
-    description: "Developed and deployed a Python-based Flask web application integrated with the Spotify API, enabling users to visualize personalized Spotify 'wrapped' data including top artists and tracks.",
-    longDescription: "Built a full-stack web application that replicates Spotify's popular 'Wrapped' feature. The application integrates with the Spotify Web API using OAuth2 authentication for secure user login. Users can visualize their personalized music data including top artists, tracks, and listening patterns. The project demonstrates proficiency in full-stack development, API integration, and user authentication. The application features a responsive design and provides insights into users' music listening habits, enhancing the overall music discovery experience.",
-    techStack: ["Python", "Flask", "Spotify API", "OAuth2", "Web Development", "Full-Stack"],
-    images: ["/images/projects/wrappedCover.png","/images/projects/landing_page_1.png","/images/projects/second_page_2.png","/images/projects/third_page_3.png"],
-    demo: "https://spotify-wrapped-clone.vercel.app/",
-    github: "https://github.com/wesleymeredith/Spotify-wrapped-clone",
+    id: "mxene-roadmap",
+    title: "Roadmap: Computational Studies of MXenes",
+    description: "Contributed to computational section of roadmaps paper.",
+    longDescription: "Wrote part of the computational studies section of the roadmaps paper.",
+    techStack: ["Molecular Dynamics", "DFT", "MXenes"],
+    images: ["/images/projects/F_MXene_render.png"],
+    //github: "<>",
+    //demo: "<>",
     //notebook: "<>"
-    date: "2024"
-  },
-  {
-    id: "drowsiness-detector",
-    title: "Drowsiness Detector",
-    description: "Developed a real-time, webcam-based drowsiness detection system using computer vision techniques with a focus on enhancing personal productivity.",
-    longDescription: "This computer vision project addresses the growing issue of video call fatigue by implementing a real-time drowsiness detection system. The application uses OpenCV for webcam integration and dlib for facial landmark detection. I implemented a sophisticated EAR (Eye Aspect Ratio) threshold algorithm for accurate detection of drowsiness, allowing for personalized alerts tailored to individual drowsy patterns and preferences. The system can be particularly useful for remote workers, students, and anyone spending extended periods in video meetings, helping to maintain alertness and productivity.",
-    techStack: ["Python", "OpenCV", "dlib", "Computer Vision", "Facial Recognition"],
-    images: ["/images/projects/drowsyCover.png", "/images/projects/eye_open.png", "/images/projects/eye_close.png"],
-    github: "https://github.com/wesleymeredith/Drowsiness-Detection",
-    //demo: "https://drowsiness-detector-demo.com",
-    //notebook: "<>"
-    date: "2022"
+    paper: "",
+    date: "2025"
   }
 ];
