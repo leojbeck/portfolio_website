@@ -69,7 +69,9 @@ const MxeneRoadmapContent: React.FC<{ project?: Project | null }> = ({ project }
         <h2 className="text-3xl font-semibold tracking-tight mb-6">Introduction</h2>
         <div className="prose prose-lg mb-12">
           <p className="mb-6">
-
+          Hendrik Heinz, Isaac Armstrong, and myself wrote section <strong>5.1: Computational Studies of MXenes</strong> as a part of <strong>MXenes 2025 Roadmap</strong> (submitted, in review).
+          This section is a review of the recent computational progress made in the field of MXenes.
+          In particular, this review focused on the progress made using molecular dynamics (MD) and density functional theory (DFT).
           </p>
           <p className="mb-6">
                       

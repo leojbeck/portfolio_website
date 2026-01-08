@@ -69,10 +69,16 @@ const MxeneDopamineContent: React.FC<{ project?: Project | null }> = ({ project 
         <h2 className="text-3xl font-semibold tracking-tight mb-6">Introduction</h2>
         <div className="prose prose-lg mb-12">
           <p className="mb-6">
-            
+          MXenes are a relatively new class of 2D materials that have shown great promise for applications in aerospace, 
+          composites, electromagnetic shielding, and biosensing. However, it is difficult to experimentally measure
+          the properties of MXenes due to their size. Because of this, computational methods have become useful in 
+          providing insight into their properties. Specifically, using molecular dynamics, we can determine shear strength, 
+          thermal conductivity, small molecule binding, nanoindentation, and more.
           </p>
           <p className="mb-6">
-            
+          For this project, we were interested in the binding properties of dopamine onto the surface of the MXenes. We wanted to 
+          determine the binding energy of a single protonated dopamine (DAH+), the average residence time, multiple DAH+ accumulation,
+          equilibrium binding concentrations, and binding configurations. 
           </p>
         </div>
       </div>
@@ -83,13 +89,22 @@ const MxeneDopamineContent: React.FC<{ project?: Project | null }> = ({ project 
         <h2 className="text-3xl font-semibold tracking-tight mb-6">Technical Implementation</h2>
         <div className="prose prose-lg mb-12">
           <p className="mb-6">
-            
+            While most of this project utilized LAMMPS, the dopamine binding portion was simulated using NAMD. We adapted the MXene 
+            parameters in the Interface Force Field (IFF) to be used with CHARMM and NAMD. Simulation systems were created in
+            Materials Studio with use of Packmol to create the water solution and dopamine layers. Each system is roughly 18,500 atoms.
           </p>
           <p className="mb-6">
-            
+            Since we were simulating MXenes in solution, we used NVT at room temperature (298K) with pH 6 (point of zero charge) and pH 5 
+            (HCl prereacted with -OH terminations). 
+           
           </p>
           <p className="mb-6">
-            
+             For the single dopamine systems, I ran 12 duplicates, where 6 started bound and 6 started
+            floating in H<sub>2</sub>O. Each of the 12 were run for 10ns, or 10,000,000 time steps.
+          </p>
+          <p className="mb-6">
+             For the multiple dopamine systems, I ran systems of 20, 40, and 80 DAH+ Cl- pairs, each with one all bound, and one all detached.
+             Each were run for a total of 90ns, requiring 64 cpus and 2-3 restarts.
           </p>
         </div>
       </div>

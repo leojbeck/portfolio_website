@@ -72,7 +72,7 @@ export const projects: Project[] = [
     description: "Used NAMD to simulate dopamine binding on the surface of Ti3C2 MXenes under various surface conditions.",
     longDescription: "As part of a larger project, I used NAMD to run single dopamine and multiple dopamine accumulation simulations under pH 5 and 6, with varying amounts of -OH and -F surface terminations.",
     techStack: ["Python", "MXenes", "NAMD", "bash", "LAMMPS"],
-    images: ["/images/projects/40_f23_ruler_yes_depth.png","/images/projects/landing_page_1.png","/images/projects/second_page_2.png","/images/projects/third_page_3.png"],
+    images: ["/images/projects/40_f23_ruler_yes_depth.png","/images/projects/perp_single_run_03_close.png","/images/projects/20F_ring_angle_residence.png"],
     //demo: "<>",
     github: "https://github.com/leojbeck/namd_pre_post_processing",
     paper: "https://chemrxiv.org/engage/chemrxiv/article-details/6921f2b8a10c9f5ca13a9ea6",
