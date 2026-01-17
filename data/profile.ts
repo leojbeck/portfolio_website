@@ -20,6 +20,7 @@ export interface Profile {
   };
   description: string[];
   avatar?: string; // Optional: path to avatar image in public/images/
+  cv?: string; // Optional: path to CV PDF in public/
 }
 
 export const profile: Profile = {
@@ -35,6 +36,7 @@ export const profile: Profile = {
     "I worked at the Air Force Research Lab (AFRL) as a High Performance Computing researcher Summer of 2024, focused on calculating shear properties of MXenes using molecular dynamics.",
     "I enjoy music, hiking, climbing, and geography games."
   ],
-  avatar: "/images/Beck-Leo_8x10_20240718.jpg" // Uncomment and add your avatar image
+  avatar: "/images/Beck-Leo_8x10_20240718.jpg", // Uncomment and add your avatar image
+  cv: "/LeoJBeck_CV.pdf" // Path to CV PDF in public folder
 };
 
