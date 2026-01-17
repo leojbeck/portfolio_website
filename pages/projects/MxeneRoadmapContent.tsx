@@ -64,9 +64,14 @@ const MxeneRoadmapContent: React.FC<{ project?: Project | null }> = ({ project }
   return (
     <>
       <ProjectLinks project={project} />
+      <div className="prose prose-lg mb-12">
+          <p className="mb-6">
+          This publication is currently under review (and not on ArXiv). A link to the paper will be added once available.
+          </p>
+      </div>
 
       <section className="mb-12">
-        <h2 className="text-3xl font-semibold tracking-tight mb-6">Introduction</h2>
+        <h2 className="text-3xl font-semibold tracking-tight mb-6">Overview</h2>
         <div className="prose prose-lg mb-12">
           <p className="mb-6">
           Hendrik Heinz, Isaac Armstrong, and myself wrote section <strong>5.1: Computational Studies of MXenes</strong> as a part of <strong>MXenes 2025 Roadmap</strong> (submitted, in review).
@@ -74,7 +79,8 @@ const MxeneRoadmapContent: React.FC<{ project?: Project | null }> = ({ project }
           In particular, this review focused on the progress made using molecular dynamics (MD) and density functional theory (DFT).
           </p>
           <p className="mb-6">
-                      
+          A figure in the section showcases some of the work Isaac and myself have worked on, including images of the dopamine accumulation
+          simulations I ran in NAMD.
           </p>
         </div>
       </section>

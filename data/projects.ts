@@ -38,7 +38,7 @@ export const projects: Project[] = [
     techStack: ["LAMMPS","Python", "HPC", "bash", "Machine Learning"],
     images: ["/images/projects/FMBA_esm.png"],
     github: "https://github.com/leojbeck/lammps_pre_post_processing",
-    //notebook: "/notebooks/vail_causal",
+    //notebook: "/notebooks/lammps_analysis",
     date: "2026"
   },
   {
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     id: "hoip-ml",
     title: "Enhancing Dimensionality Prediction in Hybrid Metal Halides",
     description: "Used the HybriD3 database to build machine learning models to predict hybrid metal halide dimensionality.",
-    longDescription: "This project involved programmatically grabbing entries from HybriD3, filtering, and applying machine learning methods to the small-scale, imbalanced database.",
+    longDescription: "This project involved programmatically grabbing entries from HybriD<sup>3</sup>, filtering, and applying machine learning methods to the small-scale, imbalanced database.",
     techStack: ["Python", "Feature Extraction","XGBoost", "Machine Learning"],
     images: ["/images/projects/hoip-mariia-ml-hybrid3.png"],
     //github: "<>",

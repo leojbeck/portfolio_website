@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
           {/* Description paragraphs */}
           <div className="space-y-2 text-zinc-700 max-w-2xl">
             <li className="flex items-start"> 
-            I am a Materials Science & Engineering PhD student at CU Boulder. My research is focused on using molecular dynamics and machine learning to predict stability and structures of hybrid organic inorganic perovskites (HOIPs).
+            I am a Materials Science & Engineering PhD student at CU Boulder. My research is focused on using molecular dynamics and machine learning to predict structural features of hybrid organic inorganic semiconducting materials.
             </li>
             <li className="flex items-start">
             I worked at the Air Force Research Lab (AFRL) as a High Performance Computing researcher Summer of 2024, focused on calculating shear properties of MXenes using molecular dynamics.

@@ -31,7 +31,7 @@ export const profile: Profile = {
     badge: undefined // Optional: remove if not applicable
   },
   description: [
-    "I am a Materials Science & Engineering PhD student at CU Boulder. My research is focused on using molecular dynamics to predict stability and structures of hybrid organic inorganic perovskites (HOIPs)",
+    "I am a Materials Science & Engineering PhD student at CU Boulder. My research is focused on using molecular dynamics to predict structural features of hybrid organic inorganic semiconductors.",
     "I worked at the Air Force Research Lab (AFRL) as a High Performance Computing researcher Summer of 2024, focused on calculating shear properties of MXenes using molecular dynamics.",
     "I enjoy music, hiking, climbing, and geography games."
   ],

@@ -30,7 +30,7 @@ export const contactInfo: ContactInfo = {
   linkedin: "https://www.linkedin.com/in/leo-beck",
   github: "https://github.com/leojbeck",
   orcid: "https://orcid.org/0009-0000-9568-9733", // Uncomment if you have Kaggle
-  // portfolio: "https://wesleymeredith.github.io" // Uncomment if you have a separate portfolio
+  // portfolio: "https://leojbeck.github.io" // Uncomment if you have a separate portfolio
   researchgate: "https://www.researchgate.net/profile/Leo-Beck-3"
 };
 
