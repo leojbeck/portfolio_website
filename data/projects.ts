@@ -59,7 +59,7 @@ export const projects: Project[] = [
     description: "Used the HybriD3 database to build machine learning models to predict hybrid metal halide dimensionality.",
     longDescription: "This project involved programmatically grabbing entries from HybriD<sup>3</sup>, filtering, and applying machine learning methods to the small-scale, imbalanced database.",
     techStack: ["Python", "Feature Extraction","XGBoost", "Machine Learning"],
-    images: ["/images/projects/hoip-mariia-ml-hybrid3.png"],
+    images: ["/images/projects/hoip-mariia-ml-hybrid3.png", "/images/projects/SMOTE_sample_increase.png"],
     //github: "<>",
     //demo: "<>"
     //notebook: "<>",
