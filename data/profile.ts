@@ -21,6 +21,7 @@ export interface Profile {
   description: string[];
   avatar?: string; // Optional: path to avatar image in public/images/
   cv?: string; // Optional: path to CV PDF in public/
+  resume?: string; // Optional: path to Resume PDF in public/
 }
 
 export const profile: Profile = {
@@ -37,6 +38,7 @@ export const profile: Profile = {
     "I enjoy music, hiking, climbing, and geography games."
   ],
   avatar: "/images/Beck-Leo_8x10_20240718.jpg", // Uncomment and add your avatar image
-  cv: "/LeoJBeck_CV.pdf" // Path to CV PDF in public folder
+  cv: "/LeoJBeck_CV.pdf", // Path to CV PDF in public folder
+  resume: "/LeoJBeck_resume.pdf" // Path to Resume PDF in public folder
 };
 
