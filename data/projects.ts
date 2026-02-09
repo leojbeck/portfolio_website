@@ -49,7 +49,7 @@ export const projects: Project[] = [
     techStack: ["Photolithography", "Chemical Etching", "Device Fabrication"],
     images: ["/images/projects/memristor_fig2.jpeg", "/images/projects/memristor_fig5.jpeg"],
     //github: "<>",
-    paper: "https://par.nsf.gov/servlets/purl/10474242",
+    paper: "https://pubs.acs.org/doi/10.1021/acsaelm.3c00708",
     //notebook: "/notebooks/letusski.html",
     date: "2021"
   },
