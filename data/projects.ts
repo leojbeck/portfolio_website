@@ -71,11 +71,25 @@ export const projects: Project[] = [
     date: "2025"
   },
   {
+    id: "perovskite-ml",
+    title: "Crystal feature extraction and dimensionality prediction in hybrid metal halides",
+    description: "Using the HybriD3 and Cambridge Structural databases to build ML models to predict hybrid metal halide crystal features.",
+    longDescription: "This project involved programmatically grabbing entries from HybriD3 and the Cambridge Structural Database, extracting CIF-based input and output features, and exposing machine learning predictions through a GUI.",
+    status: "current",
+    techStack: ["Python", "Feature Extraction","XGBoost", "Machine Learning"],
+    images: ["/images/projects/perov_ml_gui.PNG"], //"/images/projects/SMOTE_sample_increase.png"],
+    github: "https://github.com/leojbeck/hoip_ml.git",
+    //demo: "<>"
+    //notebook: "<>",
+    paper: "https://arxiv.org/abs/2512.05367",
+    date: "2026"
+  },
+  {
     id: "mxene-dopamine",
     title: "Quantifying MXene Interfacial Properties",
     description: "Used NAMD to simulate dopamine binding on the surface of Ti3C2 MXenes under various surface conditions.",
     longDescription: "As part of a larger project, I used NAMD to run single dopamine and multiple dopamine accumulation simulations under pH 5 and 6, with varying amounts of -OH and -F surface terminations.",
-    status: "current",
+    status: "past",
     techStack: ["Python", "MXenes", "NAMD", "bash", "LAMMPS"],
     images: ["/images/projects/40_f23_ruler_yes_depth.png","/images/projects/perp_single_run_03_close.png","/images/projects/20F_ring_angle_residence.png"],
     //demo: "<>",

@@ -20,6 +20,7 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
+import TechnicalToolkit from '../components/TechnicalToolkit';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 
@@ -31,6 +32,9 @@ const HomePage: React.FC = () => {
     >
       {/* Hero Section - Introduction and personal info */}
       <Hero />
+
+      {/* Technical Toolkit Section - Methods and tools by workflow */}
+      <TechnicalToolkit />
       
       {/* Projects Section - Showcase of data science projects */}
       <Projects />

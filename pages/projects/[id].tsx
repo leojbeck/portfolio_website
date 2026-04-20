@@ -12,6 +12,7 @@ import HOIP_mlContent from './HOIP_mlContent';
 import MxeneDopamineContent from './MxeneDopamineContent';
 import MxeneRoadmapContent from './MxeneRoadmapContent';
 import HOIP_mdContent from './HOIP_mdContent';
+import PerovskiteMLContent from './PerovskiteMLContent';
 
 const ProjectPage: React.FC = () => {
   const router = useRouter();
@@ -52,6 +53,8 @@ const ProjectPage: React.FC = () => {
       return <ClemsonMemristorContent project={project} />;
     case 'hoip-ml':
       return <HOIP_mlContent project={project} />;
+    case 'perovskite-ml':
+      return <PerovskiteMLContent project={project} />;
     case 'mxene-dopamine':
       return <MxeneDopamineContent project={project} />;
     case 'mxene-roadmap':
@@ -107,13 +110,9 @@ return (
 
 // ADD THESE FUNCTIONS FOR STATIC GENERATION:
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = [
-    { params: { id: 'hoip-md' } },
-    { params: { id: 'clemson-memristor' } },
-    { params: { id: 'hoip-ml' } },
-    { params: { id: 'mxene-dopamine' } },
-    { params: { id: 'mxene-roadmap' } },
-  ];
+  const paths = projects.map((project) => ({
+    params: { id: project.id },
+  }));
 
   return {
     paths,
