@@ -20,6 +20,7 @@ export interface Project {
   title: string;
   description: string;
   longDescription?: string; // Optional: extended description for project detail pages
+  status: 'current' | 'past';
   techStack: string[];
   images?: string[]; // Optional: path to project image
   github?: string; // Optional: GitHub repository URL
@@ -35,6 +36,7 @@ export const projects: Project[] = [
     title: "Predicting Stability and Structure of Hybrid Organic Inorganic Perovskites",
     description: "Using Molecular Dynamics to calculate formation energies and structural features.",
     longDescription: "I am using LAMMPS to calculate formation energies and structural features of HOIPs / HMHs, with the goal to give predictions to experimental collaborators.",
+    status: "current",
     techStack: ["LAMMPS","Python", "HPC", "bash", "Machine Learning"],
     images: ["/images/projects/FMBA_esm.png"],
     github: "https://github.com/leojbeck/lammps_pre_post_processing",
@@ -46,6 +48,7 @@ export const projects: Project[] = [
     title: "Fabrication of Polypyrrole Electrochemical Memristors",
     description: "Fabricated 3-terminal thin-film organic memristors, then performed electrical characterization.",
     longDescription: "This project involved fabricating 3-terminal organic memristors with various chemistries, then using an oscilloscope to characterize their memristive properties. The work was part of a larger research project, which has been published in ACS Applied Electronic Materials.",
+    status: "past",
     techStack: ["Photolithography", "Chemical Etching", "Device Fabrication"],
     images: ["/images/projects/memristor_fig2.jpeg", "/images/projects/memristor_fig5.jpeg"],
     //github: "<>",
@@ -58,6 +61,7 @@ export const projects: Project[] = [
     title: "Enhancing Dimensionality Prediction in Hybrid Metal Halides",
     description: "Used the HybriD3 database to build machine learning models to predict hybrid metal halide dimensionality.",
     longDescription: "This project involved programmatically grabbing entries from HybriD<sup>3</sup>, filtering, and applying machine learning methods to the small-scale, imbalanced database.",
+    status: "past",
     techStack: ["Python", "Feature Extraction","XGBoost", "Machine Learning"],
     images: ["/images/projects/hoip-mariia-ml-hybrid3.png", "/images/projects/SMOTE_sample_increase.png"],
     //github: "<>",
@@ -71,6 +75,7 @@ export const projects: Project[] = [
     title: "Quantifying MXene Interfacial Properties",
     description: "Used NAMD to simulate dopamine binding on the surface of Ti3C2 MXenes under various surface conditions.",
     longDescription: "As part of a larger project, I used NAMD to run single dopamine and multiple dopamine accumulation simulations under pH 5 and 6, with varying amounts of -OH and -F surface terminations.",
+    status: "current",
     techStack: ["Python", "MXenes", "NAMD", "bash", "LAMMPS"],
     images: ["/images/projects/40_f23_ruler_yes_depth.png","/images/projects/perp_single_run_03_close.png","/images/projects/20F_ring_angle_residence.png"],
     //demo: "<>",
@@ -84,6 +89,7 @@ export const projects: Project[] = [
     title: "Roadmap: Computational Studies of MXenes",
     description: "Contributed to computational section of roadmaps paper.",
     longDescription: "Wrote part of the computational studies section of the roadmaps paper.",
+    status: "past",
     techStack: ["Molecular Dynamics", "DFT", "MXenes"],
     images: ["/images/projects/F_MXene_render.png"],
     //github: "<>",
