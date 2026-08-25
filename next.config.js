@@ -30,6 +30,10 @@ const nextConfig = {
   },
   env: {
     NEXT_PUBLIC_LAST_UPDATED: lastUpdated,
+    // Resolved once here (where VERCEL/NODE_ENV are reliably real) and
+    // handed to the client as a plain string — see lib/basePath.ts for
+    // why this can't just be re-derived from process.env.VERCEL client-side.
+    NEXT_PUBLIC_BASE_PATH: BASE_PATH,
   },
 }
 
