@@ -70,12 +70,12 @@ const Hero: React.FC = () => {
             I worked at the Air Force Research Lab (AFRL) as a High Performance Computing researcher Summer of 2024 & 2026, focused on calculating shear and thermal properties of MXenes using molecular dynamics.
             </li>
             <li className="flex items-start">
-            I have a B.S. in Materials Science & Engineering from Clemson University, where I worked on a variety of projects including DFT calculations of High Entropy Alloys (HEAs), 
+            I have a B.S. in Mathematics and a B.S. in Materials Science & Engineering from Clemson University, where I worked on a variety of projects including DFT calculations of High Entropy Alloys (HEAs), 
             multi-objective optimization of PDEs, and fabrication of 3-terminal memristors. 
             Additionally, I was a member of the Formula SAE team.
             </li>
             <li className="flex items-start">
-            I enjoy music, hiking, climbing, and geography games in my free time.
+            I enjoy music, hiking, climbing, geography games, and reading in my free time.
             </li>
             <li className="flex items-start">
             

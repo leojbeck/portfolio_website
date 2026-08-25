@@ -4,6 +4,7 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
+  basePath: '/portfolio_website',
   images: {
     unoptimized: true
   }

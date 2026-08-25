@@ -19,6 +19,7 @@ import React from 'react';
 import Head from 'next/head';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { BASE_PATH } from '../lib/basePath';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -27,7 +28,7 @@ interface LayoutProps {
   image?: string; // Optional: defaults to the profile photo for link previews
 }
 
-const DEFAULT_OG_IMAGE = '/images/Beck-Leo_8x10_20240718.jpg';
+const DEFAULT_OG_IMAGE = `${BASE_PATH}/images/Beck-Leo_8x10_20240718.jpg`;
 
 const Layout: React.FC<LayoutProps> = ({ children, title, description, image }) => {
   const ogImage = image || DEFAULT_OG_IMAGE;
@@ -38,7 +39,7 @@ const Layout: React.FC<LayoutProps> = ({ children, title, description, image }) 
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/images/favicon.ico" />
+        <link rel="icon" href={`${BASE_PATH}/images/favicon.ico`} />
 
         {/* Per-page Open Graph / Twitter Card tags — site-wide defaults live in _document.tsx */}
         <meta property="og:title" content={title} />

@@ -16,6 +16,7 @@
  */
 
 import { Html, Head, Main, NextScript } from 'next/document';
+import { BASE_PATH } from '../lib/basePath';
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || '';
 
@@ -34,10 +35,10 @@ export default function Document() {
         )}
         
         {/* Favicon and app icons */}
-        <link rel="icon" href="/images/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+        <link rel="icon" href={`${BASE_PATH}/images/favicon.ico`} />
+        <link rel="apple-touch-icon" sizes="180x180" href={`${BASE_PATH}/images/apple-touch-icon.png`} />
+        <link rel="icon" type="image/png" sizes="32x32" href={`${BASE_PATH}/images/favicon-32x32.png`} />
+        <link rel="icon" type="image/png" sizes="16x16" href={`${BASE_PATH}/images/favicon-16x16.png`} />
         
         {/* Meta tags for SEO */}
         <meta name="theme-color" content="#ffffff" />

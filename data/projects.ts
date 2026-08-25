@@ -15,6 +15,8 @@
  * 2. Reference them as "/images/projects/your-image.jpg"
  */
 
+import { BASE_PATH } from '../lib/basePath';
+
 export interface Project {
   id: string;
   title: string;
@@ -38,7 +40,7 @@ export const projects: Project[] = [
     longDescription: "I am using LAMMPS to calculate formation energies and structural features of HOIPs / HMHs, with the goal to give predictions to experimental collaborators.",
     status: "current",
     techStack: ["LAMMPS","Python", "HPC", "bash", "Machine Learning"],
-    images: ["/images/projects/FMBA_esm.png"],
+    images: [`${BASE_PATH}/images/projects/FMBA_esm.png`],
     github: "https://github.com/leojbeck/lammps_pre_post_processing",
     //notebook: "/notebooks/lammps_analysis",
     date: "2026"
@@ -50,7 +52,7 @@ export const projects: Project[] = [
     longDescription: "This project involved fabricating 3-terminal organic memristors with various chemistries, then using an oscilloscope to characterize their memristive properties. The work was part of a larger research project, which has been published in ACS Applied Electronic Materials.",
     status: "past",
     techStack: ["Photolithography", "Chemical Etching", "Device Fabrication"],
-    images: ["/images/projects/memristor_fig2.jpeg", "/images/projects/memristor_fig5.jpeg"],
+    images: [`${BASE_PATH}/images/projects/memristor_fig2.jpeg`, `${BASE_PATH}/images/projects/memristor_fig5.jpeg`],
     //github: "<>",
     paper: "https://pubs.acs.org/doi/10.1021/acsaelm.3c00708",
     //notebook: "/notebooks/letusski.html",
@@ -63,7 +65,7 @@ export const projects: Project[] = [
     longDescription: "This project involved programmatically grabbing entries from HybriD<sup>3</sup>, filtering, and applying machine learning methods to the small-scale, imbalanced database.",
     status: "past",
     techStack: ["Python", "Feature Extraction","XGBoost", "Machine Learning"],
-    images: ["/images/projects/hoip-mariia-ml-hybrid3.png", "/images/projects/SMOTE_sample_increase.png"],
+    images: [`${BASE_PATH}/images/projects/hoip-mariia-ml-hybrid3.png`, `${BASE_PATH}/images/projects/SMOTE_sample_increase.png`],
     //github: "<>",
     //demo: "<>"
     //notebook: "<>",
@@ -77,7 +79,7 @@ export const projects: Project[] = [
     longDescription: "This project involved programmatically grabbing entries from HybriD3 and the Cambridge Structural Database, extracting CIF-based input and output features, and exposing machine learning predictions through a GUI.",
     status: "current",
     techStack: ["Python", "Feature Extraction","XGBoost", "Machine Learning"],
-    images: ["/images/projects/perov_ml_gui.PNG"], //"/images/projects/SMOTE_sample_increase.png"],
+    images: [`${BASE_PATH}/images/projects/perov_ml_gui.PNG`], //"/images/projects/SMOTE_sample_increase.png"],
     github: "https://github.com/leojbeck/hoip_ml.git",
     //demo: "<>"
     //notebook: "<>",
@@ -91,7 +93,7 @@ export const projects: Project[] = [
     longDescription: "As part of a larger project, I used NAMD to run single dopamine and multiple dopamine accumulation simulations under pH 5 and 6, with varying amounts of -OH and -F surface terminations.",
     status: "past",
     techStack: ["Python", "MXenes", "NAMD", "bash", "LAMMPS"],
-    images: ["/images/projects/40_f23_ruler_yes_depth.png","/images/projects/perp_single_run_03_close.png","/images/projects/20F_ring_angle_residence.png"],
+    images: [`${BASE_PATH}/images/projects/40_f23_ruler_yes_depth.png`, `${BASE_PATH}/images/projects/perp_single_run_03_close.png`, `${BASE_PATH}/images/projects/20F_ring_angle_residence.png`],
     //demo: "<>",
     github: "https://github.com/leojbeck/namd_pre_post_processing",
     paper: "https://chemrxiv.org/engage/chemrxiv/article-details/6921f2b8a10c9f5ca13a9ea6",
@@ -105,7 +107,7 @@ export const projects: Project[] = [
     longDescription: "Wrote part of the computational studies section of the roadmaps paper.",
     status: "past",
     techStack: ["Molecular Dynamics", "DFT", "MXenes"],
-    images: ["/images/projects/F_MXene_render.png"],
+    images: [`${BASE_PATH}/images/projects/F_MXene_render.png`],
     //github: "<>",
     //demo: "<>",
     //notebook: "<>"
