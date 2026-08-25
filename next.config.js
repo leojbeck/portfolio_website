@@ -3,11 +3,14 @@
  */
 const { execSync } = require('child_process');
 
-// basePath only applies to production builds (what actually gets deployed
-// to GitHub Pages at /portfolio_website/) — kept empty in dev so local
-// URLs stay at the normal bare root. Next sets NODE_ENV automatically:
-// 'development' for `next dev`, 'production' for `next build`.
-const BASE_PATH = process.env.NODE_ENV === 'production' ? '/portfolio_website' : '';
+// basePath is ONLY for a manual GitHub Pages deploy (npm run deploy ->
+// gh-pages -d out), which serves from a /portfolio_website subpath. The
+// real production deployment is Vercel with a custom domain, served from
+// the root — Vercel always sets VERCEL=1 during its builds, so that's
+// used to keep basePath empty there. Also empty in dev so local URLs
+// stay at the normal bare root.
+const isGitHubPagesBuild = process.env.NODE_ENV === 'production' && !process.env.VERCEL;
+const BASE_PATH = isGitHubPagesBuild ? '/portfolio_website' : '';
 
 // Date of the last git commit — shown in the footer as "last updated."
 // Falls back to today's date if git isn't available (e.g. no .git present).

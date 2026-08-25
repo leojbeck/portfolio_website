@@ -4,12 +4,15 @@
  * before any TS/webpack transform), so the logic is duplicated there —
  * keep both in sync if the deploy target ever changes.
  *
- * Empty in dev (bare localhost URLs), '/portfolio_website' in production
- * builds — matches next.config.js's basePath so links stay in sync
- * with however this specific page load was actually served.
+ * basePath is ONLY for a manual GitHub Pages deploy (served from a
+ * /portfolio_website subpath). The real production deployment is Vercel
+ * with a custom domain, served from the root — Vercel always sets
+ * VERCEL=1 during its builds, so that's used to keep this empty there.
+ * Also empty in dev, so local URLs stay at the normal bare root.
  *
  * Needed because next/link and next/router auto-prefix with basePath,
  * but plain <img>/<a> src/href strings do not — anything hardcoded
  * (avatar, project images, PDFs, favicon) has to be prefixed manually.
  */
-export const BASE_PATH = process.env.NODE_ENV === 'production' ? '/portfolio_website' : '';
+const isGitHubPagesBuild = process.env.NODE_ENV === 'production' && !process.env.VERCEL;
+export const BASE_PATH = isGitHubPagesBuild ? '/portfolio_website' : '';
