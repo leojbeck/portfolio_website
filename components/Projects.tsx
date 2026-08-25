@@ -18,15 +18,19 @@
  */
 
 import React from 'react';
+import { useRouter } from 'next/router';
 import { Project, projects } from '../data/projects';
 
 const Projects: React.FC = () => {
-  const currentProjects = projects.filter((project) => project.status === 'current');
-  const pastProjects = projects.filter((project) => project.status === 'past');
+  const router = useRouter();
+  const researchProjects = projects.filter((project) => project.category !== 'side');
+  const sideProjects = projects.filter((project) => project.category === 'side');
+  const currentProjects = researchProjects.filter((project) => project.status === 'current');
+  const pastProjects = researchProjects.filter((project) => project.status === 'past');
 
   // Handle project click to navigate to project page
   const handleProjectClick = (projectId: string) => {
-    window.location.href = `/projects/${projectId}`;
+    router.push(`/projects/${projectId}`);
   };
 
   const renderProjectCard = (project: Project) => (
@@ -35,8 +39,9 @@ const Projects: React.FC = () => {
       className="bg-accent-50 rounded-lg shadow-sm border border-accent-100 overflow-hidden card-hover cursor-pointer hover:shadow-md transition-shadow duration-300 relative group"
       onClick={() => handleProjectClick(project.id)}
     >
-      {/* Project Image */}
-      {project.images && (
+      {/* Project Image — side projects intentionally show no card thumbnail,
+          even though their images are still used on the detail page */}
+      {project.images && project.category !== 'side' && (
         <div className="h-48 bg-gray-100 overflow-hidden">
           <img
             src={project.images[0]}
@@ -112,6 +117,7 @@ const Projects: React.FC = () => {
 
         {renderProjectGroup('Current Projects', currentProjects)}
         {renderProjectGroup('Past Projects', pastProjects)}
+        {renderProjectGroup('Side Projects', sideProjects)}
       </div>
     </section>
   );

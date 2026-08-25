@@ -7,12 +7,16 @@ import { profile } from '../../data/profile';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 // Import your project content components
+import ProjectLinks from '../../components/projectContent/ProjectLinks';
 import ClemsonMemristorContent from '../../components/projectContent/ClemsonMemristorContent';
 import HOIP_mlContent from '../../components/projectContent/HOIP_mlContent';
 import MxeneDopamineContent from '../../components/projectContent/MxeneDopamineContent';
 import MxeneRoadmapContent from '../../components/projectContent/MxeneRoadmapContent';
 import HOIP_mdContent from '../../components/projectContent/HOIP_mdContent';
 import PerovskiteMLContent from '../../components/projectContent/PerovskiteMLContent';
+import PortfolioWebsiteContent from '../../components/projectContent/PortfolioWebsiteContent';
+import BookRatingsContent from '../../components/projectContent/BookRatingsContent';
+import FunNumericsContent from '../../components/projectContent/FunNumericsContent';
 
 const ProjectPage: React.FC = () => {
   const router = useRouter();
@@ -58,14 +62,23 @@ const ProjectPage: React.FC = () => {
     case 'mxene-dopamine':
       return <MxeneDopamineContent project={project} />;
     case 'mxene-roadmap':
-      return <MxeneRoadmapContent project={project} />;  
+      return <MxeneRoadmapContent project={project} />;
+    case 'portfolio-website':
+      return <PortfolioWebsiteContent project={project} />;
+    case 'book-ratings':
+      return <BookRatingsContent project={project} />;
+    case 'fun-numerics':
+      return <FunNumericsContent project={project} />;
     default:
-      // fallback: show default introduction
+      // fallback: links + longDescription, for projects with no bespoke write-up
       return (
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Introduction</h2>
-          <div className="prose prose-lg max-w-none">{project.longDescription}</div>
-        </div>
+        <>
+          <ProjectLinks project={project} />
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Introduction</h2>
+            <div className="prose prose-lg max-w-none">{project.longDescription}</div>
+          </div>
+        </>
       );
   }
 };

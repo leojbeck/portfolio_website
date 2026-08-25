@@ -23,6 +23,7 @@ export interface Project {
   description: string;
   longDescription?: string; // Optional: extended description for project detail pages
   status: 'current' | 'past';
+  category?: 'research' | 'side'; // Optional: defaults to 'research'. 'side' groups into its own section on the Projects page.
   techStack: string[];
   images?: string[]; // Optional: path to project image
   github?: string; // Optional: GitHub repository URL
@@ -113,5 +114,42 @@ export const projects: Project[] = [
     //notebook: "<>"
     paper: "",
     date: "2025"
+  },
+  // ---- Side projects ----
+  // TODO(Leo): descriptions/tech stacks below are placeholders — refine to match reality.
+  {
+    id: "portfolio-website",
+    title: "Portfolio Website",
+    description: "This website — a Next.js + Tailwind portfolio, iterated on collaboratively with an AI coding assistant.",
+    longDescription: "A bit of a meta entry: this portfolio site is itself a side project. Built with Next.js, TypeScript, and Tailwind CSS, and deployed as a static export to GitHub Pages.",
+    status: "current",
+    category: "side",
+    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    github: "https://github.com/leojbeck/portfolio_website",
+    date: "2026"
+  },
+  {
+    id: "book-ratings",
+    title: "Book Ratings",
+    description: "A personal project for tracking and rating the books I read.",
+    longDescription: "A personal project for tracking and rating the books I read. Contains a personal recommendation engine based on book genres and ratings.",
+    status: "current",
+    category: "side",
+    techStack: ["Python"],
+    images: [`${BASE_PATH}/images/projects/3_differential_genre_school.png`],
+    github: "https://github.com/leojbeck/book_ratings",
+    date: "2026"
+  },
+  {
+    id: "fun-numerics",
+    title: "Fun Numerics",
+    description: "A collection of miscellaneous numerical methods projects and experiments.",
+    longDescription: "A grab-bag of small numerical methods projects and experiments. Contains implementations of various numerical algorithms and techniques.",
+    status: "current",
+    category: "side",
+    techStack: ["Python", "numerical methods"],
+    images: [`${BASE_PATH}/images/projects/monte_circle.png`],
+    github: "https://github.com/leojbeck/fun_numerics",
+    date: "2026"
   }
 ];

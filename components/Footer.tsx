@@ -36,6 +36,9 @@ const Footer: React.FC = () => {
             <p className="text-gray-600 text-sm">
               © {currentYear} Leo Beck. All rights reserved.
             </p>
+            <p className="text-gray-400 text-xs mt-1">
+              Last updated {process.env.NEXT_PUBLIC_LAST_UPDATED}
+            </p>
           </div>
 
           {/* Footer Links - Optional */}
