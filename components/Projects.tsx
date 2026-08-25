@@ -102,6 +102,12 @@ const Projects: React.FC = () => {
           <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
             Projects
           </h2>
+          <p className="text-zinc-700 max-w-3xl">
+            Research projects spanning molecular simulation, machine learning, and device fabrication.
+          </p>
+          <p className="text-zinc-700 max-w-3xl">
+            Side projects spanning this portfolio website, various numerical methods, and personal interests.
+          </p>
         </div>
 
         {renderProjectGroup('Current Projects', currentProjects)}

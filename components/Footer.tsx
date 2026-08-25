@@ -18,9 +18,14 @@
  */
 
 import React from 'react';
+import Link from 'next/link';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <footer className="bg-surface text-gray-900 py-8 border-t border-accent-100">
@@ -35,18 +40,18 @@ const Footer: React.FC = () => {
 
           {/* Footer Links - Optional */}
           <div className="flex space-x-6">
-            <a
-              href="#hero"
+            <button
+              onClick={scrollToTop}
               className="text-gray-600 hover:text-gray-900 text-sm transition-colors duration-200"
             >
               Back to Top
-            </a>
-            <a
-              href="#contact"
+            </button>
+            <Link
+              href="/contact"
               className="text-gray-600 hover:text-gray-900 text-sm transition-colors duration-200"
             >
               Contact
-            </a>
+            </Link>
             {/* Add more footer links here if needed */}
           </div>
         </div>

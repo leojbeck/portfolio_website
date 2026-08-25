@@ -1,35 +1,31 @@
 /**
  * Navigation Bar Component
- * 
- * This component provides a clean, minimal navigation bar that allows users to
- * smoothly scroll to different sections of the portfolio.
- * 
- * Features:
- * - Smooth scrolling to page sections
- * - Responsive design that works on mobile and desktop
- * - Clean, minimal styling that matches the overall design
- * - Sticky positioning for easy access
- * 
+ *
+ * Sticky top nav that links between the site's pages (Home, About, Contact).
+ *
  * To customize:
- * - Add/remove navigation links by editing the navItems array
+ * - Add/remove pages by editing the navItems array
  * - Update the styling in the className attributes
  * - Modify the mobile menu behavior if needed
  */
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Menu, X } from 'lucide-react';
+import { profile } from '../data/profile';
 
-// Navigation items - edit these to add/remove sections
+// Navigation items - edit these to add/remove pages
 const navItems = [
-  { name: 'About', href: '#hero' },
-  { name: 'Toolkit', href: '#technical-toolkit' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: '#contact' }
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Contact', href: '/contact' }
 ];
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const router = useRouter();
 
   // Handle scroll effect for navbar styling
   useEffect(() => {
@@ -42,14 +38,12 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Smooth scroll to section
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsOpen(false); // Close mobile menu after clicking
-  };
+  const linkClasses = (href: string) =>
+    `px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+      router.pathname === href
+        ? 'text-accent-800 font-semibold'
+        : 'text-gray-600 hover:text-gray-900'
+    }`;
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 bg-accent-50 border-b border-accent-300 ${
@@ -61,25 +55,26 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo/Name */}
           <div className="flex-shrink-0">
-            <button
-              onClick={() => scrollToSection('#hero')}
+            <Link
+              href="/"
+              onClick={() => setIsOpen(false)}
               className="text-xl font-bold text-gray-900 hover:text-gray-700 transition-colors duration-200"
             >
-              Portfolio
-            </button>
+              {profile.name}
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navItems.map((item) => (
-                <button
+                <Link
                   key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                  href={item.href}
+                  className={linkClasses(item.href)}
                 >
                   {item.name}
-                </button>
+                </Link>
               ))}
             </div>
           </div>
@@ -99,15 +94,20 @@ const Navbar: React.FC = () => {
       {/* Mobile Navigation Menu */}
       {isOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-accent-100 border-t border-accent-200">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-accent-50 border-t border-accent-300">
             {navItems.map((item) => (
-              <button
+              <Link
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="text-gray-600 hover:text-gray-900 block w-full text-left px-3 py-2 text-base font-medium transition-colors duration-200"
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors duration-200 ${
+                  router.pathname === item.href
+                    ? 'text-accent-800 font-semibold'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
               >
                 {item.name}
-              </button>
+              </Link>
             ))}
           </div>
         </div>

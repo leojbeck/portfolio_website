@@ -25,7 +25,7 @@ export interface ContactInfo {
 
 export const contactInfo: ContactInfo = {
   email: "leojbeck@gmail.com",
-  phone: "704-654-8644",
+  //phone: "704-654-8644",
   location: "Boulder, CO",
   linkedin: "https://www.linkedin.com/in/leo-beck",
   github: "https://github.com/leojbeck",

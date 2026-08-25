@@ -1,7 +1,7 @@
 // pages/projects/HOIP_mlContent.tsx
 import React from 'react';
 import type { GetStaticProps } from 'next';
-import { Github, Play, FileText } from 'lucide-react';
+import { Play, FileText } from 'lucide-react';
 import { projects, Project } from '../../data/projects';
 
 // ---------- Reusable links (null-safe) ----------
@@ -9,7 +9,7 @@ const ProjectLinks: React.FC<{ project?: Project | null }> = ({ project }) => (
   <div className="space-y-4 mb-12">
     <h2 className="text-3xl font-semibold tracking-tight mb-6">Project Links</h2>
     <div className="flex flex-wrap gap-4">
-      {project?.github && (
+      {/* {project?.github && (
         <a
           href={project.github}
           target="_blank"
@@ -19,7 +19,7 @@ const ProjectLinks: React.FC<{ project?: Project | null }> = ({ project }) => (
           <Github size={20} className="mr-2" />
           View Code
         </a>
-      )}
+      )} */}
       {project?.demo && (
         <a
           href={project.demo}

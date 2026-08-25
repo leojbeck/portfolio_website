@@ -18,12 +18,12 @@
  */
 
 import React from 'react';
-import { Mail, Phone, MapPin, Linkedin, Github, Database, Globe } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Github, Database, Globe } from 'lucide-react';
 import { contactInfo } from '../data/contact';
 
 const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="pt-28 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-left mb-12">
@@ -60,7 +60,7 @@ const Contact: React.FC = () => {
             </div>
 
             {/* Phone - Optional */}
-            {contactInfo.phone && (
+            {/* {contactInfo.phone && (
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
                   <Phone size={20} className="text-green-600" />
@@ -75,7 +75,7 @@ const Contact: React.FC = () => {
                   </a>
                 </div>
               </div>
-            )}
+            )} */}
 
             {/* Location - Optional */}
             {contactInfo.location && (

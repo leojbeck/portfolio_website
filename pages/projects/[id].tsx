@@ -25,7 +25,7 @@ const ProjectPage: React.FC = () => {
     return (
       /* Project not found*/
       <Layout title=" " description="The requested project could not be found">
-        <div className="pt-16 px-4 sm:px-6 lg:px-8">
+        <div className="pt-28 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center">
               <h1 className="text-3xl font-bold text-gray-900 mb-4">Project Not Found</h1>
@@ -72,7 +72,7 @@ const ProjectPage: React.FC = () => {
 
 return (
   <Layout title={`${project.title} - Project`} description={project.description}>
-    <div className="pt-16 px-4 sm:px-6 lg:px-8">
+    <div className="pt-28 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         {/* Project Header */}
         <div className="mb-12">

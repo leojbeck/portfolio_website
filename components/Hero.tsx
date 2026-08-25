@@ -20,7 +20,7 @@ import { profile } from '../data/profile';
 
 const Hero: React.FC = () => {
   return (
-    <section id="hero" className="pt-16 pb-16 px-4 sm:px-6 lg:px-8">
+    <section id="hero" className="pt-28 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-left">
           
@@ -60,10 +60,35 @@ const Hero: React.FC = () => {
             </span>
           </a>
           
+          
+          {/* Description paragraphs */}
+          <div className="space-y-2 text-zinc-700 max-w-2xl">
+            <li className="flex items-start"> 
+            I am a Materials Science & Engineering PhD student at CU Boulder. My research is focused on using molecular dynamics and machine learning to predict structural features of hybrid organic inorganic semiconducting materials.
+            </li>
+            <li className="flex items-start">
+            I worked at the Air Force Research Lab (AFRL) as a High Performance Computing researcher Summer of 2024, focused on calculating shear properties of MXenes using molecular dynamics.
+            </li>
+            <li className="flex items-start">
+            I enjoy music, hiking, climbing, and geography games in my free time.
+            </li>
+            <li className="flex items-start">
+            
+            </li>
+            {/* {profile.description.map((paragraph, index) => (
+              <p
+                key={index}
+                className="text-md text-gray-600 leading-relaxed"
+              >
+                {paragraph}
+              </p>
+            ))} */}
+          </div>
           {/* CV/Resume Buttons and About Me Section Title */}
-          <div className="flex items-center gap-6 mb-5 flex-wrap">
+          <div className="flex items-center gap-6 mt-10 mb-5 flex-wrap">
             <h3 className="text-2xl font-bold text-zinc-900 flex items-center">
-              About me
+              
+              
             </h3>
             <div className="flex items-center gap-3 flex-wrap">
               {profile.cv && (
@@ -117,26 +142,6 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Description paragraphs */}
-          <div className="space-y-2 text-zinc-700 max-w-2xl">
-            <li className="flex items-start"> 
-            I am a Materials Science & Engineering PhD student at CU Boulder. My research is focused on using molecular dynamics and machine learning to predict structural features of hybrid organic inorganic semiconducting materials.
-            </li>
-            <li className="flex items-start">
-            I worked at the Air Force Research Lab (AFRL) as a High Performance Computing researcher Summer of 2024, focused on calculating shear properties of MXenes using molecular dynamics.
-            </li>
-            <li className="flex items-start">
-            I enjoy music, hiking, climbing, and geography games in my free time.
-            </li>
-            {/* {profile.description.map((paragraph, index) => (
-              <p
-                key={index}
-                className="text-md text-gray-600 leading-relaxed"
-              >
-                {paragraph}
-              </p>
-            ))} */}
-          </div>
         </div>
       </div>
     </section>
