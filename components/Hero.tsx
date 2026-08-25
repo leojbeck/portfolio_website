@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
   return (
     <section id="hero" className="pt-28 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="text-left">
+        <div className="text-left bg-surface/90 backdrop-blur-sm rounded-2xl border border-accent-100 shadow-sm p-6 sm:p-10">
           
           {/* Name + Avatar */}
           <div className="flex items-center gap-4 mb-4">
@@ -67,7 +67,12 @@ const Hero: React.FC = () => {
             I am a Materials Science & Engineering PhD student at CU Boulder. My research is focused on using molecular dynamics and machine learning to predict structural features of hybrid organic inorganic semiconducting materials.
             </li>
             <li className="flex items-start">
-            I worked at the Air Force Research Lab (AFRL) as a High Performance Computing researcher Summer of 2024, focused on calculating shear properties of MXenes using molecular dynamics.
+            I worked at the Air Force Research Lab (AFRL) as a High Performance Computing researcher Summer of 2024 & 2026, focused on calculating shear and thermal properties of MXenes using molecular dynamics.
+            </li>
+            <li className="flex items-start">
+            I have a B.S. in Materials Science & Engineering from Clemson University, where I worked on a variety of projects including DFT calculations of High Entropy Alloys (HEAs), 
+            multi-objective optimization of PDEs, and fabrication of 3-terminal memristors. 
+            Additionally, I was a member of the Formula SAE team.
             </li>
             <li className="flex items-start">
             I enjoy music, hiking, climbing, and geography games in my free time.

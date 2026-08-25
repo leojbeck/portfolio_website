@@ -7,13 +7,14 @@
  */
 
 import React from 'react';
+import Link from 'next/link';
 import { profile } from '../data/profile';
 
 const HomeHeader: React.FC = () => {
   return (
     <section className="pt-28 pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 mb-5">
           {profile.avatar && (
             <img
               src={profile.avatar}
@@ -30,6 +31,13 @@ const HomeHeader: React.FC = () => {
             </p>
           </div>
         </div>
+
+        <p className="text-zinc-700 max-w-2xl">
+          PhD student in Materials Science &amp; Engineering at CU Boulder, using molecular dynamics and machine learning to study hybrid organic-inorganic semiconductors.{' '}
+          <Link href="/about" className="text-accent-700 hover:text-accent-800 font-medium whitespace-nowrap">
+            More about me &rarr;
+          </Link>
+        </p>
       </div>
     </section>
   );

@@ -75,6 +75,27 @@ html {
   animation: float 3s ease-in-out infinite;
 }
 
+/* Slow lattice drift for the crystal structure background — moves by
+   exactly one tile period (48px) so the loop has no visible seam. */
+@keyframes latticeDrift {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-48px, -48px);
+  }
+}
+
+.animate-lattice-drift {
+  animation: latticeDrift 16s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-lattice-drift {
+    animation: none;
+  }
+}
+
 /* Gradient text effect for special elements */
 .gradient-text {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
