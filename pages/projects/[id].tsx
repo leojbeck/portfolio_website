@@ -8,6 +8,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 
 // Import your project content components
 import ProjectLinks from '../../components/projectContent/ProjectLinks';
+import CrystalLatticeBackground from '../../components/CrystalLatticeBackground';
 import ClemsonMemristorContent from '../../components/projectContent/ClemsonMemristorContent';
 import HOIP_mlContent from '../../components/projectContent/HOIP_mlContent';
 import MxeneDopamineContent from '../../components/projectContent/MxeneDopamineContent';
@@ -89,35 +90,38 @@ return (
     description={project.description}
     image={project.images?.[0]}
   >
-    <div className="pt-28 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        {/* Project Header */}
-        <div className="mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">{project.title}</h1>
-          <p className="text-lg text-gray-600 mb-6">
-            {profile.name} • {project.date}
-          </p>
-        </div>
-
-        {/* Project Main Image */}
-        {project.images && (
+    <div className="relative overflow-hidden min-h-screen">
+      <CrystalLatticeBackground variant="perovskite" />
+      <div className="relative z-10 pt-28 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto bg-surface/90 backdrop-blur-sm rounded-2xl border border-accent-100 shadow-sm p-6 sm:p-10">
+          {/* Project Header */}
           <div className="mb-12">
-            <img src={project.images[0]} alt={project.title} className="w-full rounded-lg shadow-lg" />
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">{project.title}</h1>
+            <p className="text-lg text-gray-600 mb-6">
+              {profile.name} • {project.date}
+            </p>
           </div>
-        )}
 
-        {/* Render project-specific content here */}
-        {renderProjectContent()}
+          {/* Project Main Image */}
+          {project.images && (
+            <div className="mb-12">
+              <img src={project.images[0]} alt={project.title} className="w-full rounded-lg shadow-lg" />
+            </div>
+          )}
 
-        {/* Back Button */}
-        <div className="pt-8 border-gray-200">
-          <button
-            onClick={() => router.push('/')}
-            className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-200"
-          >
-            <ArrowLeft size={16} className="mr-2" />
-            Back to Projects
-          </button>
+          {/* Render project-specific content here */}
+          {renderProjectContent()}
+
+          {/* Back Button */}
+          <div className="pt-8 border-gray-200">
+            <button
+              onClick={() => router.push('/')}
+              className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-200"
+            >
+              <ArrowLeft size={16} className="mr-2" />
+              Back to Projects
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -121,10 +121,11 @@ export const projects: Project[] = [
     id: "portfolio-website",
     title: "Portfolio Website",
     description: "This website — a Next.js + Tailwind portfolio, iterated on collaboratively with an AI coding assistant.",
-    longDescription: "A bit of a meta entry: this portfolio site is itself a side project. Built with Next.js, TypeScript, and Tailwind CSS, and deployed as a static export to GitHub Pages.",
+    longDescription: "A bit of a meta entry: this portfolio site is itself a side project. Built with Next.js, TypeScript, and Tailwind CSS, and deployed as a static export on Vercel.",
     status: "current",
     category: "side",
     techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    images: [`${BASE_PATH}/images/projects/website_snip.PNG`],
     github: "https://github.com/leojbeck/portfolio_website",
     date: "2026"
   },

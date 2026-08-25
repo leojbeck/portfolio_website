@@ -9,6 +9,8 @@
  *                      (echoes 2D materials like MXenes, Home page)
  *  - "orthorhombic"  — sparse rectangular lattice, corners only
  *                      (quietest motif, Contact page)
+ *  - "perovskite"    — corner-sharing diamond/octahedra network
+ *                      (the ABX3 perovskite motif itself, Project pages)
  *
  * Always low-opacity and behind z-10 content so it never competes
  * with text. Each variant's drift animation (defined in globals.css)
@@ -17,7 +19,7 @@
 
 import React from 'react';
 
-export type LatticeVariant = 'cubic' | 'hexagonal' | 'orthorhombic';
+export type LatticeVariant = 'cubic' | 'hexagonal' | 'orthorhombic' | 'perovskite';
 
 interface LatticeConfig {
   patternId: string;
@@ -87,6 +89,31 @@ const configs: Record<LatticeVariant, LatticeConfig> = {
         <circle cx="56" cy="0" r="2.2" fill="currentColor" />
         <circle cx="0" cy="38" r="2.2" fill="currentColor" />
         <circle cx="56" cy="38" r="2.2" fill="currentColor" />
+      </>
+    ),
+  },
+  perovskite: {
+    patternId: 'lattice-perovskite',
+    tileWidth: 60,
+    tileHeight: 60,
+    opacityClass: 'opacity-30',
+    animationClass: 'animate-lattice-drift-perovskite',
+    pattern: (
+      <>
+        {/* diamond = 2D projection of a corner-sharing BX6 octahedron;
+            vertices sit exactly at tile-edge midpoints so adjacent tiles'
+            diamonds touch tip-to-tip, like a real perovskite framework */}
+        <polygon
+          points="30,0 60,30 30,60 0,30"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+        />
+        <circle cx="30" cy="0" r="2" fill="currentColor" />
+        <circle cx="60" cy="30" r="2" fill="currentColor" />
+        <circle cx="30" cy="60" r="2" fill="currentColor" />
+        <circle cx="0" cy="30" r="2" fill="currentColor" />
+        <circle cx="30" cy="30" r="1.6" fill="currentColor" />
       </>
     ),
   },

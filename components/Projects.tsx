@@ -39,9 +39,8 @@ const Projects: React.FC = () => {
       className="bg-accent-50 rounded-lg shadow-sm border border-accent-100 overflow-hidden card-hover cursor-pointer hover:shadow-md transition-shadow duration-300 relative group"
       onClick={() => handleProjectClick(project.id)}
     >
-      {/* Project Image — side projects intentionally show no card thumbnail,
-          even though their images are still used on the detail page */}
-      {project.images && project.category !== 'side' && (
+      {/* Project Image */}
+      {project.images && (
         <div className="h-48 bg-gray-100 overflow-hidden">
           <img
             src={project.images[0]}

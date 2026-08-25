@@ -104,6 +104,15 @@ html {
   }
 }
 
+@keyframes latticeDriftPerovskite {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-60px, -60px);
+  }
+}
+
 .animate-lattice-drift-cubic {
   animation: latticeDriftCubic 16s linear infinite;
 }
@@ -116,10 +125,15 @@ html {
   animation: latticeDriftOrthorhombic 22s linear infinite;
 }
 
+.animate-lattice-drift-perovskite {
+  animation: latticeDriftPerovskite 18s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-lattice-drift-cubic,
   .animate-lattice-drift-hexagonal,
-  .animate-lattice-drift-orthorhombic {
+  .animate-lattice-drift-orthorhombic,
+  .animate-lattice-drift-perovskite {
     animation: none;
   }
 }
