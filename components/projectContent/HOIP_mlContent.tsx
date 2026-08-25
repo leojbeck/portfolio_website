@@ -1,8 +1,6 @@
-// pages/projects/HOIP_mlContent.tsx
 import React from 'react';
-import type { GetStaticProps } from 'next';
 import { Play, FileText } from 'lucide-react';
-import { projects, Project } from '../../data/projects';
+import { Project } from '../../data/projects';
 
 // ---------- Reusable links (null-safe) ----------
 const ProjectLinks: React.FC<{ project?: Project | null }> = ({ project }) => (
@@ -69,7 +67,7 @@ const HOIP_mlContent: React.FC<{ project?: Project | null }> = ({ project }) => 
         <h2 className="text-3xl font-semibold tracking-tight mb-6">Introduction</h2>
         <div className="prose prose-lg mb-12">
           <p className="mb-6">
-            This project focuses on enhancing the prediction of dimensionality in hybrid metal halides using machine learning techniques. 
+            This project focuses on enhancing the prediction of dimensionality in hybrid metal halides using machine learning techniques.
             By leveraging the HybriD3 database, we aim to improve the accuracy and reliability of dimensionality predictions, which are crucial for the design and optimization of new materials.
             Specifically, we address challenges associated with small-scale and imbalanced datasets through Synthetic Minority Over-sampling Technique (SMOTE).
           </p>
@@ -98,7 +96,7 @@ const HOIP_mlContent: React.FC<{ project?: Project | null }> = ({ project }) => 
           />
         </div>
       )}
-      
+
       {project?.images?.[2] && (
         <div className="mb-5">
           <img
@@ -114,7 +112,7 @@ const HOIP_mlContent: React.FC<{ project?: Project | null }> = ({ project }) => 
         <div className="prose prose-lg mb-12">
           <h4 className="mt-4 mb-1 font-semibold text-gray-800">Data Preprocessing</h4>
           <p className="mb-6">
-            All data came from the HybriD<sup>3</sup> database. Initial preprocessing involved handling missing values, encoding categorical variables, 
+            All data came from the HybriD<sup>3</sup> database. Initial preprocessing involved handling missing values, encoding categorical variables,
             and normalizing numerical features to ensure uniformity across the dataset.
           </p>
 
@@ -128,7 +126,7 @@ const HOIP_mlContent: React.FC<{ project?: Project | null }> = ({ project }) => 
 
           <h4 className="mt-4 mb-1 font-semibold text-gray-800">Model Implementation</h4>
           <p className="mb-6">
-            Gradient Boosted Trees (GBT) were used as a core predictive model due to their ability to capture 
+            Gradient Boosted Trees (GBT) were used as a core predictive model due to their ability to capture
             complex non-linear decision boundaries and interactions between features.
             We also used logistic regression, random forests, and support vector machines (SVM) as base learners in a stacking ensemble.
             The base learners generate first-level predictions, which are then used as input features for the meta-learner, GBT. This two-layer
@@ -143,11 +141,11 @@ const HOIP_mlContent: React.FC<{ project?: Project | null }> = ({ project }) => 
         <div className="prose prose-lg mb-12">
           <h4 className="mt-4 mb-1 font-semibold text-gray-800">Model Performance Comparison</h4>
           <p className="mb-6">
-            Implementing SMOTE most significantly improved model performance on minority classes, as evidenced by balanced accuracy across all classes. 
+            Implementing SMOTE most significantly improved model performance on minority classes, as evidenced by balanced accuracy across all classes.
             In particular, 0D had the most significant improvement, increasing from 54% to 95% accuracy.
           </p>
           <p className="mb-6">
-            
+
           </p>
         </div>
       </div>
@@ -171,26 +169,4 @@ const HOIP_mlContent: React.FC<{ project?: Project | null }> = ({ project }) => 
   );
 };
 
-// ---------- Page wrapper + SSG data ----------
-type PageProps = { project: Project | null };
-
-// If `Project` doesn’t include `id`, widen it locally
-type MaybeId = Project & { id?: string };
-
-// ⚠️ Set to your actual id from data/projects.ts
-const TARGET_ID = 'hoip-ml';
-
-export default function HOIP_mlPage({ project }: PageProps) {
-  return <HOIP_mlContent project={project} />;
-}
-
-export const getStaticProps: GetStaticProps<PageProps> = async () => {
-  const list = (projects ?? []) as MaybeId[];
-  const project = list.find((p) => p.id === TARGET_ID) ?? null;
-
-  if (!project) {
-    return { notFound: true };
-  }
-
-  return { props: { project } };
-};
+export default HOIP_mlContent;

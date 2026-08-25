@@ -75,9 +75,9 @@ html {
   animation: float 3s ease-in-out infinite;
 }
 
-/* Slow lattice drift for the crystal structure background — moves by
-   exactly one tile period (48px) so the loop has no visible seam. */
-@keyframes latticeDrift {
+/* Slow lattice drift for the crystal structure backgrounds — each
+   moves by exactly one tile period so the loop has no visible seam. */
+@keyframes latticeDriftCubic {
   from {
     transform: translate(0, 0);
   }
@@ -86,12 +86,40 @@ html {
   }
 }
 
-.animate-lattice-drift {
-  animation: latticeDrift 16s linear infinite;
+@keyframes latticeDriftHexagonal {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-40px, -69.3px);
+  }
+}
+
+@keyframes latticeDriftOrthorhombic {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-56px, -38px);
+  }
+}
+
+.animate-lattice-drift-cubic {
+  animation: latticeDriftCubic 16s linear infinite;
+}
+
+.animate-lattice-drift-hexagonal {
+  animation: latticeDriftHexagonal 20s linear infinite;
+}
+
+.animate-lattice-drift-orthorhombic {
+  animation: latticeDriftOrthorhombic 22s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-lattice-drift {
+  .animate-lattice-drift-cubic,
+  .animate-lattice-drift-hexagonal,
+  .animate-lattice-drift-orthorhombic {
     animation: none;
   }
 }

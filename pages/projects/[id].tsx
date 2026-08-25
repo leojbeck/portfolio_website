@@ -7,12 +7,12 @@ import { profile } from '../../data/profile';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 // Import your project content components
-import ClemsonMemristorContent from './ClemsonMemristorContent';
-import HOIP_mlContent from './HOIP_mlContent';
-import MxeneDopamineContent from './MxeneDopamineContent';
-import MxeneRoadmapContent from './MxeneRoadmapContent';
-import HOIP_mdContent from './HOIP_mdContent';
-import PerovskiteMLContent from './PerovskiteMLContent';
+import ClemsonMemristorContent from '../../components/projectContent/ClemsonMemristorContent';
+import HOIP_mlContent from '../../components/projectContent/HOIP_mlContent';
+import MxeneDopamineContent from '../../components/projectContent/MxeneDopamineContent';
+import MxeneRoadmapContent from '../../components/projectContent/MxeneRoadmapContent';
+import HOIP_mdContent from '../../components/projectContent/HOIP_mdContent';
+import PerovskiteMLContent from '../../components/projectContent/PerovskiteMLContent';
 
 const ProjectPage: React.FC = () => {
   const router = useRouter();
@@ -71,7 +71,11 @@ const ProjectPage: React.FC = () => {
 };
 
 return (
-  <Layout title={`${project.title} - Project`} description={project.description}>
+  <Layout
+    title={`${project.title} - Project`}
+    description={project.description}
+    image={project.images?.[0]}
+  >
     <div className="pt-28 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         {/* Project Header */}

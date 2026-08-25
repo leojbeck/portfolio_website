@@ -17,7 +17,7 @@ const AboutPage: React.FC = () => {
       description="About Leo Beck: Materials Science PhD student, research background, and technical toolkit"
     >
       <div className="relative overflow-hidden">
-        <CrystalLatticeBackground />
+        <CrystalLatticeBackground variant="cubic" />
         <div className="relative z-10">
           <Hero />
           <TechnicalToolkit />

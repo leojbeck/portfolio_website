@@ -32,7 +32,7 @@ const TechnicalToolkit: React.FC = () => {
   return (
     <section id="technical-toolkit" className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="text-left mb-12">
+        <div className="text-left mb-12 bg-surface/90 backdrop-blur-sm rounded-2xl border border-accent-100 shadow-sm p-6 sm:p-8">
           <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
             Technical Toolkit
           </h2>

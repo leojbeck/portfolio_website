@@ -25,6 +25,7 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="pt-28 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
+      <div className="bg-surface/90 backdrop-blur-sm rounded-2xl border border-accent-100 shadow-sm p-6 sm:p-10">
         {/* Section Header */}
         <div className="text-left mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
@@ -175,16 +176,17 @@ const Contact: React.FC = () => {
         {/* Call to Action */}
         <div className="text-left">
           <p className="text-gray-600 mb-4">
-            Looking for a materials scientist to join or collaborate with your team?
+            Looking for someone to join or collaborate with your team?
           </p>
           <a
-            href={`mailto:${contactInfo.email}?subject=Materials Science Collaboration Opportunity`}
+            href={`mailto:${contactInfo.email}?subject=Collaboration Opportunity`}
             className="inline-flex items-center px-6 py-3 bg-accent-700 text-white font-medium rounded-lg hover:bg-accent-800 transition-colors duration-200"
           >
             <Mail size={20} className="mr-2" />
             Let's Talk
           </a>
         </div>
+      </div>
       </div>
     </section>
   );

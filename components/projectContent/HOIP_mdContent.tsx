@@ -1,8 +1,6 @@
-// pages/projects/HOIP_mdContent.tsx
 import React from 'react';
-import type { GetStaticProps } from 'next';
 import { Github, Play, FileText } from 'lucide-react';
-import { projects, Project } from '../../data/projects';
+import { Project } from '../../data/projects';
 
 // ------------- Reusable links (null-safe) -------------
 const ProjectLinks: React.FC<{ project?: Project | null }> = ({ project }) => (
@@ -43,16 +41,16 @@ const ProjectLinks: React.FC<{ project?: Project | null }> = ({ project }) => (
         </a>
       )}
       {project?.paper && (
-              <a
-                href={project.paper}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors duration-200"
-              >
-                <FileText size={20} className="mr-2" />
-                View Publication
-              </a>
-            )}
+        <a
+          href={project.paper}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors duration-200"
+        >
+          <FileText size={20} className="mr-2" />
+          View Publication
+        </a>
+      )}
     </div>
   </div>
 );
@@ -77,8 +75,8 @@ const HOIP_md: React.FC<{ project?: Project | null }> = ({ project }) => {
           <p className="text-gray-800 leading-relaxed mb-6">
             Perovskites are both a mineral and a class of materials with the same crystal structure as the mineral calcium titanium oxide (CaTiO<sub>3</sub>).
             Hybrid organic-inorganic perovskites (HOIPs) have shown great promise in photovoltaic applications due to their high power conversion efficiencies and low fabrication costs.
-            However, their long-term stability remains a significant challenge, hindering their commercial viability. 
-            
+            However, their long-term stability remains a significant challenge, hindering their commercial viability.
+
           </p>
           <p className="mb-6">
             Because of this, research into lower dimensional perovskites (2D, quasi-2D, and 1D) has increased, where dimensionality is the number of dimensions
@@ -96,7 +94,7 @@ const HOIP_md: React.FC<{ project?: Project | null }> = ({ project }) => {
         <h2 className="text-3xl font-semibold tracking-tight mb-6">Molecular Dynamics Setup</h2>
         <div className="prose prose-lg max-w-none">
           <p className="bg-blue-50 border-l-4 border-blue-400 p-6 my-6">
-            For this project, we utilize LAMMPS, a classical molecular dynamics simulator developed by Sandia National Laboratories. 
+            For this project, we utilize LAMMPS, a classical molecular dynamics simulator developed by Sandia National Laboratories.
             We used the Interface Force Field (IFF) to model the interactions between atoms in our HOIP systems. As part of the work,
             we adapted and validated IFF parameters for several organic cations commonly used in HOIPs.
           </p>
@@ -108,7 +106,7 @@ const HOIP_md: React.FC<{ project?: Project | null }> = ({ project }) => {
             </p>
           </div>
           <p className="mb-6">
-            
+
           </p>
         </div>
       </div>
@@ -145,7 +143,7 @@ const HOIP_md: React.FC<{ project?: Project | null }> = ({ project }) => {
         <h2 className="text-3xl font-semibold tracking-tight mb-6"></h2>
         <div className="prose prose-lg max-w-none">
           <p className="mb-6">
-            
+
           </p>
         </div>
       </div>
@@ -154,7 +152,7 @@ const HOIP_md: React.FC<{ project?: Project | null }> = ({ project }) => {
         <h2 className="text-3xl font-semibold tracking-tight mb-6">Results</h2>
         <div className="prose prose-lg max-w-none">
           <p className="mb-6">
-            
+
           </p>
           <p className="mb-6">
             <em>Note: Specific numerical results are being finalized and will be updated in the full analysis.</em>
@@ -183,7 +181,7 @@ const HOIP_md: React.FC<{ project?: Project | null }> = ({ project }) => {
           <p className="mb-6">
             In our formation energy calculations, we are purposefully excluding solvents due to their complexity.
             There are relatively few experimental studies that determine what is actually happening when the precursors are in solution,
-            so we felt there was not enough to validate on. However, this means that we a missing some realism in our calculation. 
+            so we felt there was not enough to validate on. However, this means that we a missing some realism in our calculation.
             The true calculation would be close to:
           </p>
           <div className="bg-gray-50 p-6 rounded-lg font-mono text-sm mb-4">
@@ -198,7 +196,7 @@ const HOIP_md: React.FC<{ project?: Project | null }> = ({ project }) => {
       <div className="mb-12">
         <h2 className="text-3xl font-semibold tracking-tight mb-6"></h2>
         <div className="prose prose-lg max-w-none">
-          
+
         </div>
       </div>
 
@@ -215,25 +213,4 @@ const HOIP_md: React.FC<{ project?: Project | null }> = ({ project }) => {
   );
 };
 
-// ------------- Page wrapper + SSG data -------------
-type PageProps = { project: Project | null };
-
-// If `Project` doesn’t include `id`, widen it locally
-type MaybeId = Project & { id?: string };
-
-const TARGET_ID = 'hoip-md';
-
-export default function VailPage({ project }: PageProps) {
-  return <HOIP_md project={project} />;
-}
-
-export const getStaticProps: GetStaticProps<PageProps> = async () => {
-  const list = (projects ?? []) as MaybeId[];
-  const project = list.find(p => p.id === TARGET_ID) ?? null;
-
-  if (!project) {
-    return { notFound: true };
-  }
-
-  return { props: { project } };
-};
+export default HOIP_md;

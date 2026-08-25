@@ -1,4 +1,3 @@
-// pages/projects/PerovskiteMLContent.tsx
 import React from 'react';
 import { Github, Play, FileText } from 'lucide-react';
 import { Project } from '../../data/projects';

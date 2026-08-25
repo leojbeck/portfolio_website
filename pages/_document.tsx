@@ -45,11 +45,10 @@ export default function Document() {
         
         {/* Open Graph default meta tags */}
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Data Scientist Portfolio" />
-        
+        <meta property="og:site_name" content="Leo Beck" />
+
         {/* Twitter Card default meta tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@yourusername" />
 
         {/* Google Analytics 4 */}
         {GA_MEASUREMENT_ID && (

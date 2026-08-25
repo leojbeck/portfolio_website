@@ -1,8 +1,6 @@
-// pages/projects/MxeneDopamineContent.tsx
 import React from 'react';
-import type { GetStaticProps } from 'next';
 import { Github, Play, FileText } from 'lucide-react';
-import { projects, Project } from '../../data/projects';
+import { Project } from '../../data/projects';
 
 // ---------------- Reusable links (null-safe) ----------------
 const ProjectLinks: React.FC<{ project?: Project | null }> = ({ project }) => (
@@ -43,16 +41,16 @@ const ProjectLinks: React.FC<{ project?: Project | null }> = ({ project }) => (
         </a>
       )}
       {project?.paper && (
-              <a
-                href={project.paper}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors duration-200"
-              >
-                <FileText size={20} className="mr-2" />
-                View Publication
-              </a>
-            )}
+        <a
+          href={project.paper}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors duration-200"
+        >
+          <FileText size={20} className="mr-2" />
+          View Publication
+        </a>
+      )}
     </div>
   </div>
 );
@@ -69,16 +67,16 @@ const MxeneDopamineContent: React.FC<{ project?: Project | null }> = ({ project 
         <h2 className="text-3xl font-semibold tracking-tight mb-6">Introduction</h2>
         <div className="prose prose-lg mb-12">
           <p className="mb-6">
-          MXenes are a relatively new class of 2D materials that have shown great promise for applications in aerospace, 
+          MXenes are a relatively new class of 2D materials that have shown great promise for applications in aerospace,
           composites, electromagnetic shielding, and biosensing. However, it is difficult to experimentally measure
-          the properties of MXenes due to their size. Because of this, computational methods have become useful in 
-          providing insight into their properties. Specifically, using molecular dynamics, we can determine shear strength, 
+          the properties of MXenes due to their size. Because of this, computational methods have become useful in
+          providing insight into their properties. Specifically, using molecular dynamics, we can determine shear strength,
           thermal conductivity, small molecule binding, nanoindentation, and more.
           </p>
           <p className="mb-6">
-          For this project, we were interested in the binding properties of dopamine onto the surface of the MXenes. We wanted to 
+          For this project, we were interested in the binding properties of dopamine onto the surface of the MXenes. We wanted to
           determine the binding energy of a single protonated dopamine (DAH+), the average residence time, multiple DAH+ accumulation,
-          equilibrium binding concentrations, and binding configurations. 
+          equilibrium binding concentrations, and binding configurations.
           </p>
         </div>
       </div>
@@ -89,14 +87,14 @@ const MxeneDopamineContent: React.FC<{ project?: Project | null }> = ({ project 
         <h2 className="text-3xl font-semibold tracking-tight mb-6">Technical Implementation</h2>
         <div className="prose prose-lg mb-12">
           <p className="mb-2">
-            While most of this project utilized LAMMPS, the dopamine binding portion was simulated using NAMD. We adapted the MXene 
+            While most of this project utilized LAMMPS, the dopamine binding portion was simulated using NAMD. We adapted the MXene
             parameters in the Interface Force Field (IFF) to be used with CHARMM and NAMD. Simulation systems were created in
             Materials Studio with use of Packmol to create the water solution and dopamine layers. Each system is roughly 18,500 atoms.
           </p>
           <p className="mb-3">
-            Since we were simulating MXenes in solution, we used NVT at room temperature (298K) with pH 6 (point of zero charge) and pH 5 
-            (HCl prereacted with -OH terminations). 
-           
+            Since we were simulating MXenes in solution, we used NVT at room temperature (298K) with pH 6 (point of zero charge) and pH 5
+            (HCl prereacted with -OH terminations).
+
           </p>
           {project?.images?.[2] && (
         <div className="mb-4">
@@ -128,7 +126,7 @@ const MxeneDopamineContent: React.FC<{ project?: Project | null }> = ({ project 
           />
         </div>
       )}
-      
+
       {project?.images?.[3] && (
         <div className="mb-5">
           <img
@@ -143,9 +141,9 @@ const MxeneDopamineContent: React.FC<{ project?: Project | null }> = ({ project 
       <div className="mb-12">
         <h2 className="text-3xl font-semibold tracking-tight mb-6">Key Takeaways</h2>
         <div className="prose prose-lg mb-12">
-          
+
           <p className="mb-6">
-            The work from this project is under review for publication. 
+            The work from this project is under review for publication.
             This project sharpened both technical skills and the ability to work with both government and academic research groups.
           </p>
         </div>
@@ -166,24 +164,4 @@ const MxeneDopamineContent: React.FC<{ project?: Project | null }> = ({ project 
   );
 };
 
-// ---------------- Page wrapper + SSG data ----------------
-type PageProps = { project: Project | null };
-
-// If `Project` doesn’t declare `id`, widen it locally
-type MaybeId = Project & { id?: string };
-const TARGET_ID = 'spotify-wrapped-clone';
-
-export default function MxeneDopaminePage({ project }: PageProps) {
-  return <MxeneDopamineContent project={project} />;
-}
-
-export const getStaticProps: GetStaticProps<PageProps> = async () => {
-  const list = (projects ?? []) as MaybeId[];
-  const project = list.find(p => p.id === TARGET_ID) ?? null;
-
-  if (!project) {
-    return { notFound: true };
-  }
-
-  return { props: { project } };
-};
+export default MxeneDopamineContent;
