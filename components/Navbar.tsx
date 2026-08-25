@@ -21,10 +21,9 @@ import { Menu, X } from 'lucide-react';
 
 // Navigation items - edit these to add/remove sections
 const navItems = [
-  { name: 'About', href: '#about' },
+  { name: 'About', href: '#hero' },
+  { name: 'Toolkit', href: '#technical-toolkit' },
   { name: 'Projects', href: '#projects' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Experience', href: '#experience' },
   { name: 'Contact', href: '#contact' }
 ];
 
@@ -53,10 +52,10 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100' 
-        : 'bg-white'
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 bg-accent-50 border-b border-accent-300 ${
+      scrolled
+        ? 'bg-accent-50/95 backdrop-blur-sm shadow-sm'
+        : ''
     }`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -100,7 +99,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Navigation Menu */}
       {isOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-100">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-accent-100 border-t border-accent-200">
             {navItems.map((item) => (
               <button
                 key={item.name}

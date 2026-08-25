@@ -32,7 +32,7 @@ const Projects: React.FC = () => {
   const renderProjectCard = (project: Project) => (
     <div
       key={project.id}
-      className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden card-hover cursor-pointer hover:shadow-md transition-shadow duration-300 relative group"
+      className="bg-accent-50 rounded-lg shadow-sm border border-accent-100 overflow-hidden card-hover cursor-pointer hover:shadow-md transition-shadow duration-300 relative group"
       onClick={() => handleProjectClick(project.id)}
     >
       {/* Project Image */}
@@ -66,7 +66,7 @@ const Projects: React.FC = () => {
           {project.techStack.map((tech, techIndex) => (
             <span
               key={techIndex}
-              className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
+              className="px-3 py-1 bg-accent-100 text-accent-800 text-sm rounded-full"
             >
               {tech}
             </span>

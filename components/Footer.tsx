@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white text-gray-900 py-8 border-t border-gray-200">
+    <footer className="bg-surface text-gray-900 py-8 border-t border-accent-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between">
           {/* Copyright */}

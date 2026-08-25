@@ -48,11 +48,11 @@ const TechnicalToolkit: React.FC = () => {
             return (
               <div
                 key={group.title}
-                className="bg-white rounded-lg border border-gray-100 shadow-sm p-6"
+                className="bg-accent-50 rounded-lg border border-accent-100 shadow-sm p-6"
               >
                 <div className="flex items-start gap-4 mb-5">
-                  <div className="w-11 h-11 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0">
-                    <Icon size={22} className="text-gray-800" />
+                  <div className="w-11 h-11 rounded-lg bg-accent-100 flex items-center justify-center flex-shrink-0">
+                    <Icon size={22} className="text-accent-700" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -68,7 +68,7 @@ const TechnicalToolkit: React.FC = () => {
                   {group.tools.map((tool) => (
                     <span
                       key={tool}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
+                      className="px-3 py-1 bg-accent-100 text-accent-800 text-sm rounded-full"
                     >
                       {tool}
                     </span>

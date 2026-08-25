@@ -17,6 +17,7 @@
 
 import React from 'react';
 import Head from 'next/head';
+import Navbar from './Navbar';
 import Footer from './Footer';
 
 interface LayoutProps {
@@ -35,7 +36,9 @@ const Layout: React.FC<LayoutProps> = ({ children, title, description }) => {
         <link rel="icon" href="images/favicon.ico" />
       </Head>
       
-      <main className="min-h-screen bg-white">
+      <Navbar />
+
+      <main className="min-h-screen bg-surface">
         {children}
       </main>
       

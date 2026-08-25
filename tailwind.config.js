@@ -22,17 +22,25 @@ module.exports = {
           900: '#0f172a',
         },
         accent: {
-          50: '#fef2f2',
-          100: '#fee2e2',
-          200: '#fecaca',
-          300: '#fca5a5',
-          400: '#f87171',
-          500: '#ef4444',
-          600: '#dc2626',
-          700: '#b91c1c',
-          800: '#991b1b',
-          900: '#7f1d1d',
+          // Toned-down "crystal violet" scale, used for card washes,
+          // filled buttons, and small brand touches (badge dot, icon chips).
+          20: '#fdfaffff',
+          50: '#f2ebfeff',
+          100: '#e4daf4ff',
+          200: '#d1c1eeff',
+          300: '#B9A4DC',
+          400: '#9B7EC8',
+          500: '#7D5CAE',
+          600: '#654A8E',
+          700: '#4F3B70',
+          800: '#3B2C55',
+          900: '#28203C',
         }
+      },
+      backgroundColor: {
+        // Off-white page background, distinct from the purple-tinted
+        // "accent-50" used for card/box fills.
+        surface: '#FAF8FC',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
