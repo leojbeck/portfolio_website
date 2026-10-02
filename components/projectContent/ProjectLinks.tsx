@@ -1,10 +1,10 @@
 import React from 'react';
-import { Github, Play, FileText } from 'lucide-react';
+import { Github, Play, FileText, Download } from 'lucide-react';
 import { Project } from '../../data/projects';
 
 /** Shared link buttons for a project's detail page (null-safe). */
 const ProjectLinks: React.FC<{ project?: Project | null }> = ({ project }) => {
-  const hasLinks = project?.github || project?.demo || project?.notebook || project?.paper;
+  const hasLinks = project?.github || project?.demo || project?.notebook || project?.paper || project?.download;
 
   if (!hasLinks) {
     return null;
@@ -14,6 +14,16 @@ const ProjectLinks: React.FC<{ project?: Project | null }> = ({ project }) => {
     <div className="space-y-4 mb-12">
       <h2 className="text-3xl font-semibold tracking-tight mb-6">Project Links</h2>
       <div className="flex flex-wrap gap-4">
+        {project?.download && (
+          <a
+            href={project.download}
+            download
+            className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors duration-200"
+          >
+            <Download size={20} className="mr-2" />
+            Download for Windows
+          </a>
+        )}
         {project?.github && (
           <a
             href={project.github}

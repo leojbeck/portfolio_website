@@ -18,6 +18,7 @@ import PerovskiteMLContent from '../../components/projectContent/PerovskiteMLCon
 import PortfolioWebsiteContent from '../../components/projectContent/PortfolioWebsiteContent';
 import BookRatingsContent from '../../components/projectContent/BookRatingsContent';
 import FunNumericsContent from '../../components/projectContent/FunNumericsContent';
+import OrganizationAppContent from '../../components/projectContent/OrganizationAppContent';
 
 const ProjectPage: React.FC = () => {
   const router = useRouter();
@@ -70,6 +71,8 @@ const ProjectPage: React.FC = () => {
       return <BookRatingsContent project={project} />;
     case 'fun-numerics':
       return <FunNumericsContent project={project} />;
+    case 'organization-app':
+      return <OrganizationAppContent project={project} />;
     default:
       // fallback: links + longDescription, for projects with no bespoke write-up
       return (

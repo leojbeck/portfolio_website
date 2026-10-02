@@ -31,6 +31,7 @@ export interface Project {
   notebook?: string; // Optional: Jupyter notebook or analysis link
   date: string; // Date when the project was completed
   paper?: string; // Optional: URL to publication
+  download?: string; // Optional: downloadable file (e.g. an installer) for this project
 }
 
 export const projects: Project[] = [
@@ -151,6 +152,19 @@ export const projects: Project[] = [
     techStack: ["Python", "numerical methods"],
     images: [`${BASE_PATH}/images/projects/monte_circle.png`],
     github: "https://github.com/leojbeck/fun_numerics",
+    date: "2026"
+  },
+  {
+    id: "organization-app",
+    title: "Organization App",
+    // TODO(Leo): placeholder copy — refine to match what the app actually does.
+    description: "A desktop app for organizing and tracking personal tasks and files.",
+    longDescription: "A Windows desktop application I built to help organize and keep track of personal tasks and files. Packaged as a standalone installer so it can be downloaded and run without any extra setup.",
+    status: "current",
+    category: "side",
+    techStack: ["Desktop App"],
+    images: [`${BASE_PATH}/images/projects/organizer_cover.PNG`],
+    download: `${BASE_PATH}/downloads/organizer_0.1.0_x64-setup.exe`,
     date: "2026"
   }
 ];
