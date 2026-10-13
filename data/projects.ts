@@ -157,12 +157,11 @@ export const projects: Project[] = [
   {
     id: "organization-app",
     title: "Organization App",
-    // TODO(Leo): placeholder copy — refine to match what the app actually does.
-    description: "A desktop app for organizing and tracking personal tasks and files.",
-    longDescription: "A Windows desktop application I built to help organize and keep track of personal tasks and files. Packaged as a standalone installer so it can be downloaded and run without any extra setup.",
+    description: "A Windows desktop app with a calendar, to-dos, and notes, plus a GitHub-style heatmap for tracking daily productivity.",
+    longDescription: "A Windows desktop app for staying organized, with a homepage, calendar, to-dos, projects, and notes. Its productivity section logs a daily entry — work location, tasks completed, and how the day felt — and visualizes the history as a GitHub-style contribution heatmap. Packaged as a standalone installer so it can be downloaded and run without any extra setup.",
     status: "current",
     category: "side",
-    techStack: ["Desktop App"],
+    techStack: ["Tauri", "React", "Docker"],
     images: [`${BASE_PATH}/images/projects/organizer_cover.PNG`],
     download: `${BASE_PATH}/downloads/organizer_0.1.0_x64-setup.exe`,
     date: "2026"

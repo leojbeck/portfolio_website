@@ -25,6 +25,10 @@ const OrganizationAppContent: React.FC<{ project?: Project | null }> = ({ projec
             warning — click <strong>More info</strong>, then <strong>Run anyway</strong> to
             continue.
           </p>
+          <p className="mb-6">
+            This is a personal project and is not officially supported. If you encounter any
+            issues, please report them to me via email.
+          </p>
         </div>
       </div>
 

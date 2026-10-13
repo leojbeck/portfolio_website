@@ -28,9 +28,9 @@ const Contact: React.FC = () => {
       <div className="bg-surface/90 backdrop-blur-sm rounded-2xl border border-accent-100 shadow-sm p-6 sm:p-10">
         {/* Section Header */}
         <div className="text-left mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
             Get In Touch
-          </h2>
+          </h1>
           <p className="text-lg text-gray-700 max-w-2xl">
             I'm always interested in new opportunities and collaborations. Feel free to reach out!
           </p>

@@ -94,10 +94,6 @@ const Hero: React.FC = () => {
           </div>
           {/* CV/Resume Buttons and About Me Section Title */}
           <div className="flex items-center gap-6 mt-10 mb-5 flex-wrap">
-            <h3 className="text-2xl font-bold text-zinc-900 flex items-center">
-              
-              
-            </h3>
             <div className="flex items-center gap-3 flex-wrap">
               {profile.cv && (
                 <a
